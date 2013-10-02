@@ -14,5 +14,6 @@
 
 @property (nonatomic, retain) NSString * groups_id;
 @property (nonatomic, retain) id members;
+- (id)initIntoManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

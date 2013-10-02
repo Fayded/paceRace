@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateGroupViewController : UIViewController
+@interface CreateGroupViewController : UIViewController <UITextFieldDelegate>
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+- (IBAction)createGroupButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *groupName;
+- (IBAction)dismissModal:(id)sender;
 
 @end

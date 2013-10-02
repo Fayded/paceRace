@@ -23,12 +23,15 @@
 		DD4BD4E517B44217004A0C70 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD4BD4E317B44217004A0C70 /* InfoPlist.strings */; };
 		DD4BD4E817B44217004A0C70 /* Pace_RaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4BD4E717B44217004A0C70 /* Pace_RaceTests.m */; };
 		DD4BD53B17B74401004A0C70 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4BD53A17B74401004A0C70 /* CoreLocation.framework */; };
+		DD79564717FB402F00844A38 /* CreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79564617FB402F00844A38 /* CreateGroupViewController.m */; };
+		DD79564A17FB411E00844A38 /* mydatamodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD79564817FB411E00844A38 /* mydatamodel.xcdatamodeld */; };
+		DD79564D17FB448700844A38 /* Groups.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79564C17FB448700844A38 /* Groups.m */; };
+		DD8BD4C917E9486700D6C8D0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8BD4C817E9486700D6C8D0 /* MapKit.framework */; };
 		DD8CE15F17C6F6C700F48885 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE15E17C6F6C700F48885 /* SWRevealViewController.m */; };
 		DD8CE17617C99C4100F48885 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE17517C99C4100F48885 /* LoginViewController.m */; };
-		DD8CE17917C99ED500F48885 /* MatchupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE17817C99ED500F48885 /* MatchupViewController.m */; };
 		DD8CE17C17C9A13900F48885 /* RaceHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE17B17C9A13900F48885 /* RaceHistoryViewController.m */; };
 		DD8CE17F17C9A41D00F48885 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE17E17C9A41D00F48885 /* ConnectViewController.m */; };
-		DD8CE18217C9A4F500F48885 /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE18117C9A4F500F48885 /* PreferencesViewController.m */; };
+		DD8CE18217C9A4F500F48885 /* NextRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE18117C9A4F500F48885 /* NextRunViewController.m */; };
 		DD8CE18517C9A96E00F48885 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE18417C9A96E00F48885 /* MainViewController.m */; };
 		DD8CE1A517C9AEAA00F48885 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE1A417C9AEAA00F48885 /* SidebarViewController.m */; };
 		DD8CE1A717C9AF6E00F48885 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = DD8CE1A617C9AF6D00F48885 /* menu.png */; };
@@ -44,15 +47,21 @@
 		DD8F097117E16667008EBE5D /* SMTwitterCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8F096D17E16667008EBE5D /* SMTwitterCredentials.m */; };
 		DD8F097317E16A54008EBE5D /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8F097217E16A54008EBE5D /* Twitter.framework */; };
 		DD8F097517E16A61008EBE5D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8F097417E16A61008EBE5D /* Accounts.framework */; };
-		DD8F097E17E2C110008EBE5D /* mydatamodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD8F097C17E2C110008EBE5D /* mydatamodel.xcdatamodeld */; };
 		DD8F098117E2C180008EBE5D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8F098017E2C180008EBE5D /* User.m */; };
 		DD8F098417E2C4A4008EBE5D /* CreateUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8F098317E2C4A4008EBE5D /* CreateUserViewController.m */; };
+		DD8F099317E3A854008EBE5D /* MatchupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8F099217E3A854008EBE5D /* MatchupListViewController.m */; };
+		DD8F099917E75893008EBE5D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8F099817E75893008EBE5D /* HomeViewController.m */; };
+		DD8F099C17E79A3F008EBE5D /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8F099B17E79A3F008EBE5D /* Todo.m */; };
 		DDA15F6D17E0013500B0A6CF /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = DDA15F3517E0013500B0A6CF /* CHANGELOG.md */; };
 		DDA15F6E17E0013500B0A6CF /* libstackmob-v2.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA15F6C17E0013500B0A6CF /* libstackmob-v2.1.1.a */; };
 		DDA15F7017E0015500B0A6CF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA15F6F17E0015500B0A6CF /* CoreData.framework */; };
 		DDA15F7217E0016B00B0A6CF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA15F7117E0016B00B0A6CF /* Security.framework */; };
 		DDA15F7417E0017200B0A6CF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA15F7317E0017200B0A6CF /* SystemConfiguration.framework */; };
 		DDA15F7617E0017900B0A6CF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA15F7517E0017900B0A6CF /* MobileCoreServices.framework */; };
+		DDB2526817F79B590090D210 /* StartRunTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2526717F79B590090D210 /* StartRunTimerViewController.m */; };
+		DDB2526B17F79BCD0090D210 /* SoloRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2526A17F79BCD0090D210 /* SoloRunViewController.m */; };
+		DDB2526E17F79CBB0090D210 /* RaceFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2526D17F79CBB0090D210 /* RaceFinishedViewController.m */; };
+		DDB2527117FB12F50090D210 /* MatchupGroupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2527017FB12F50090D210 /* MatchupGroupListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,18 +96,22 @@
 		DD4BD4E617B44217004A0C70 /* Pace_RaceTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pace_RaceTests.h; sourceTree = "<group>"; };
 		DD4BD4E717B44217004A0C70 /* Pace_RaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pace_RaceTests.m; sourceTree = "<group>"; };
 		DD4BD53A17B74401004A0C70 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DD79564517FB402F00844A38 /* CreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateGroupViewController.h; sourceTree = "<group>"; };
+		DD79564617FB402F00844A38 /* CreateGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateGroupViewController.m; sourceTree = "<group>"; };
+		DD79564917FB411E00844A38 /* mydatamodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mydatamodel.xcdatamodel; sourceTree = "<group>"; };
+		DD79564B17FB448700844A38 /* Groups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Groups.h; sourceTree = "<group>"; };
+		DD79564C17FB448700844A38 /* Groups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Groups.m; sourceTree = "<group>"; };
+		DD8BD4C817E9486700D6C8D0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DD8CE15D17C6F6C700F48885 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
 		DD8CE15E17C6F6C700F48885 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
 		DD8CE17417C99C4100F48885 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		DD8CE17517C99C4100F48885 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		DD8CE17717C99ED500F48885 /* MatchupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchupViewController.h; sourceTree = "<group>"; };
-		DD8CE17817C99ED500F48885 /* MatchupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchupViewController.m; sourceTree = "<group>"; };
 		DD8CE17A17C9A13800F48885 /* RaceHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceHistoryViewController.h; sourceTree = "<group>"; };
 		DD8CE17B17C9A13900F48885 /* RaceHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceHistoryViewController.m; sourceTree = "<group>"; };
 		DD8CE17D17C9A41D00F48885 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
 		DD8CE17E17C9A41D00F48885 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
-		DD8CE18017C9A4F500F48885 /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesViewController.h; sourceTree = "<group>"; };
-		DD8CE18117C9A4F500F48885 /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
+		DD8CE18017C9A4F500F48885 /* NextRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextRunViewController.h; sourceTree = "<group>"; };
+		DD8CE18117C9A4F500F48885 /* NextRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextRunViewController.m; sourceTree = "<group>"; };
 		DD8CE18317C9A96E00F48885 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		DD8CE18417C9A96E00F48885 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		DD8CE1A317C9AEAA00F48885 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
@@ -123,11 +136,16 @@
 		DD8F096D17E16667008EBE5D /* SMTwitterCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTwitterCredentials.m; sourceTree = "<group>"; };
 		DD8F097217E16A54008EBE5D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		DD8F097417E16A61008EBE5D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		DD8F097D17E2C110008EBE5D /* mydatamodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mydatamodel.xcdatamodel; sourceTree = "<group>"; };
 		DD8F097F17E2C180008EBE5D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		DD8F098017E2C180008EBE5D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		DD8F098217E2C4A4008EBE5D /* CreateUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateUserViewController.h; sourceTree = "<group>"; };
 		DD8F098317E2C4A4008EBE5D /* CreateUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateUserViewController.m; sourceTree = "<group>"; };
+		DD8F099117E3A854008EBE5D /* MatchupListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchupListViewController.h; sourceTree = "<group>"; };
+		DD8F099217E3A854008EBE5D /* MatchupListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchupListViewController.m; sourceTree = "<group>"; };
+		DD8F099717E75892008EBE5D /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		DD8F099817E75893008EBE5D /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		DD8F099A17E79A3F008EBE5D /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
+		DD8F099B17E79A3F008EBE5D /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 		DDA15F3517E0013500B0A6CF /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
 		DDA15F3717E0013500B0A6CF /* AFHTTPClient+StackMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPClient+StackMob.h"; sourceTree = "<group>"; };
 		DDA15F3817E0013500B0A6CF /* AFHTTPRequestOperation+RemoveContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestOperation+RemoveContentType.h"; sourceTree = "<group>"; };
@@ -186,6 +204,14 @@
 		DDA15F7117E0016B00B0A6CF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DDA15F7317E0017200B0A6CF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DDA15F7517E0017900B0A6CF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		DDB2526617F79B590090D210 /* StartRunTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartRunTimerViewController.h; sourceTree = "<group>"; };
+		DDB2526717F79B590090D210 /* StartRunTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartRunTimerViewController.m; sourceTree = "<group>"; };
+		DDB2526917F79BCD0090D210 /* SoloRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoloRunViewController.h; sourceTree = "<group>"; };
+		DDB2526A17F79BCD0090D210 /* SoloRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoloRunViewController.m; sourceTree = "<group>"; };
+		DDB2526C17F79CBB0090D210 /* RaceFinishedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceFinishedViewController.h; sourceTree = "<group>"; };
+		DDB2526D17F79CBB0090D210 /* RaceFinishedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceFinishedViewController.m; sourceTree = "<group>"; };
+		DDB2526F17FB12F50090D210 /* MatchupGroupListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchupGroupListViewController.h; sourceTree = "<group>"; };
+		DDB2527017FB12F50090D210 /* MatchupGroupListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchupGroupListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +219,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD8CE1A917C9B23D00F48885 /* Social.framework in Frameworks */,
+				DD8BD4C917E9486700D6C8D0 /* MapKit.framework in Frameworks */,
 				DD8F097517E16A61008EBE5D /* Accounts.framework in Frameworks */,
 				DD8F097317E16A54008EBE5D /* Twitter.framework in Frameworks */,
 				DD8F094C17E15311008EBE5D /* FacebookSDK.framework in Frameworks */,
@@ -201,7 +229,6 @@
 				DDA15F7417E0017200B0A6CF /* SystemConfiguration.framework in Frameworks */,
 				DDA15F7217E0016B00B0A6CF /* Security.framework in Frameworks */,
 				DDA15F7017E0015500B0A6CF /* CoreData.framework in Frameworks */,
-				DD8CE1A917C9B23D00F48885 /* Social.framework in Frameworks */,
 				DD4BD53B17B74401004A0C70 /* CoreLocation.framework in Frameworks */,
 				DD4BD4B717B44217004A0C70 /* UIKit.framework in Frameworks */,
 				DD4BD4B917B44217004A0C70 /* Foundation.framework in Frameworks */,
@@ -226,7 +253,12 @@
 		DD4BD4AA17B44217004A0C70 = {
 			isa = PBXGroup;
 			children = (
-				DD8F097C17E2C110008EBE5D /* mydatamodel.xcdatamodeld */,
+				DD79564817FB411E00844A38 /* mydatamodel.xcdatamodeld */,
+				DD79564B17FB448700844A38 /* Groups.h */,
+				DD79564C17FB448700844A38 /* Groups.m */,
+				DD8BD4C817E9486700D6C8D0 /* MapKit.framework */,
+				DD8F099A17E79A3F008EBE5D /* Todo.h */,
+				DD8F099B17E79A3F008EBE5D /* Todo.m */,
 				DD8F097417E16A61008EBE5D /* Accounts.framework */,
 				DD8F097217E16A54008EBE5D /* Twitter.framework */,
 				DD8F096417E16667008EBE5D /* SMTwitterCredentials */,
@@ -275,18 +307,30 @@
 				DD4BD4C517B44217004A0C70 /* AppDelegate.h */,
 				DD4BD4C617B44217004A0C70 /* AppDelegate.m */,
 				DD4BD4CE17B44217004A0C70 /* MainStoryboard.storyboard */,
+				DDB2526F17FB12F50090D210 /* MatchupGroupListViewController.h */,
+				DDB2527017FB12F50090D210 /* MatchupGroupListViewController.m */,
+				DDB2526C17F79CBB0090D210 /* RaceFinishedViewController.h */,
+				DDB2526D17F79CBB0090D210 /* RaceFinishedViewController.m */,
+				DDB2526917F79BCD0090D210 /* SoloRunViewController.h */,
+				DDB2526A17F79BCD0090D210 /* SoloRunViewController.m */,
+				DDB2526617F79B590090D210 /* StartRunTimerViewController.h */,
+				DDB2526717F79B590090D210 /* StartRunTimerViewController.m */,
+				DD8F099717E75892008EBE5D /* HomeViewController.h */,
+				DD8F099817E75893008EBE5D /* HomeViewController.m */,
 				DD8CE18317C9A96E00F48885 /* MainViewController.h */,
 				DD8CE18417C9A96E00F48885 /* MainViewController.m */,
-				DD8CE18017C9A4F500F48885 /* PreferencesViewController.h */,
-				DD8CE18117C9A4F500F48885 /* PreferencesViewController.m */,
+				DD8CE18017C9A4F500F48885 /* NextRunViewController.h */,
+				DD8CE18117C9A4F500F48885 /* NextRunViewController.m */,
 				DD8CE17D17C9A41D00F48885 /* ConnectViewController.h */,
 				DD8CE17E17C9A41D00F48885 /* ConnectViewController.m */,
 				DD8CE17A17C9A13800F48885 /* RaceHistoryViewController.h */,
 				DD8CE17B17C9A13900F48885 /* RaceHistoryViewController.m */,
-				DD8CE17717C99ED500F48885 /* MatchupViewController.h */,
-				DD8CE17817C99ED500F48885 /* MatchupViewController.m */,
+				DD8F099117E3A854008EBE5D /* MatchupListViewController.h */,
+				DD8F099217E3A854008EBE5D /* MatchupListViewController.m */,
 				DD8CE17417C99C4100F48885 /* LoginViewController.h */,
 				DD8CE17517C99C4100F48885 /* LoginViewController.m */,
+				DD79564517FB402F00844A38 /* CreateGroupViewController.h */,
+				DD79564617FB402F00844A38 /* CreateGroupViewController.m */,
 				DD8F098217E2C4A4008EBE5D /* CreateUserViewController.h */,
 				DD8F098317E2C4A4008EBE5D /* CreateUserViewController.m */,
 				DD8F097F17E2C180008EBE5D /* User.h */,
@@ -558,25 +602,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD4BD4C317B44217004A0C70 /* main.m in Sources */,
+				DD79564717FB402F00844A38 /* CreateGroupViewController.m in Sources */,
 				DD4BD4C717B44217004A0C70 /* AppDelegate.m in Sources */,
 				DD8CE15F17C6F6C700F48885 /* SWRevealViewController.m in Sources */,
 				DD8CE17617C99C4100F48885 /* LoginViewController.m in Sources */,
-				DD8CE17917C99ED500F48885 /* MatchupViewController.m in Sources */,
+				DDB2526B17F79BCD0090D210 /* SoloRunViewController.m in Sources */,
 				DD8CE17C17C9A13900F48885 /* RaceHistoryViewController.m in Sources */,
 				DD8CE17F17C9A41D00F48885 /* ConnectViewController.m in Sources */,
-				DD8CE18217C9A4F500F48885 /* PreferencesViewController.m in Sources */,
+				DD8CE18217C9A4F500F48885 /* NextRunViewController.m in Sources */,
+				DDB2527117FB12F50090D210 /* MatchupGroupListViewController.m in Sources */,
 				DD8CE18517C9A96E00F48885 /* MainViewController.m in Sources */,
 				DD8CE1A517C9AEAA00F48885 /* SidebarViewController.m in Sources */,
 				DD8F094517E1492A008EBE5D /* Entity.m in Sources */,
 				DD8F095217E1546A008EBE5D /* FacebookLoginViewController.m in Sources */,
+				DDB2526817F79B590090D210 /* StartRunTimerViewController.m in Sources */,
 				DD8F096317E15E3A008EBE5D /* TwitterLoginViewController.m in Sources */,
+				DD79564A17FB411E00844A38 /* mydatamodel.xcdatamodeld in Sources */,
 				DD8F096E17E16667008EBE5D /* NSData+Base64.m in Sources */,
+				DDB2526E17F79CBB0090D210 /* RaceFinishedViewController.m in Sources */,
 				DD8F096F17E16667008EBE5D /* OAuth+Additions.m in Sources */,
 				DD8F097017E16667008EBE5D /* OAuthCore.m in Sources */,
 				DD8F097117E16667008EBE5D /* SMTwitterCredentials.m in Sources */,
-				DD8F097E17E2C110008EBE5D /* mydatamodel.xcdatamodeld in Sources */,
 				DD8F098117E2C180008EBE5D /* User.m in Sources */,
+				DD79564D17FB448700844A38 /* Groups.m in Sources */,
 				DD8F098417E2C4A4008EBE5D /* CreateUserViewController.m in Sources */,
+				DD8F099317E3A854008EBE5D /* MatchupListViewController.m in Sources */,
+				DD8F099917E75893008EBE5D /* HomeViewController.m in Sources */,
+				DD8F099C17E79A3F008EBE5D /* Todo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,12 +847,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DD8F097C17E2C110008EBE5D /* mydatamodel.xcdatamodeld */ = {
+		DD79564817FB411E00844A38 /* mydatamodel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DD8F097D17E2C110008EBE5D /* mydatamodel.xcdatamodel */,
+				DD79564917FB411E00844A38 /* mydatamodel.xcdatamodel */,
 			);
-			currentVersion = DD8F097D17E2C110008EBE5D /* mydatamodel.xcdatamodel */;
+			currentVersion = DD79564917FB411E00844A38 /* mydatamodel.xcdatamodel */;
 			path = mydatamodel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

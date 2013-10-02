@@ -12,5 +12,8 @@
 @implementation Todo
 
 @dynamic location;
-
+@dynamic title;
+@dynamic todoId;
+@dynamic createddate;
+@dynamic lastmoddate;
 @end
