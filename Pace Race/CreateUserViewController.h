@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+- (IBAction)dismissModal:(id)sender;
 
 - (IBAction)createUser:(id)sender;
 @end

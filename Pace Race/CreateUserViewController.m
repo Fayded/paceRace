@@ -64,6 +64,11 @@
     return YES;
 }
 
+- (IBAction)dismissModal:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+
 - (IBAction)createUser:(id)sender {
     /*
      We instantiate an instance of User using our custom init method.
