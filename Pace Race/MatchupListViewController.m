@@ -85,7 +85,7 @@
         else if(segmentControl.selectedSegmentIndex == 1){
             return [self.groups count];
         }else{
-            return [self.objects count];
+            return 5;
         }
     
     
@@ -99,10 +99,11 @@
     if (segmentControl.selectedSegmentIndex == 0) {
         NSManagedObject *object = [self.objects objectAtIndex:indexPath.row];
         cell.textLabel.text = [object valueForKey:@"username"];
+        cell.detailTextLabel.text = [object valueForKey:@"location"];
     }
     else if(segmentControl.selectedSegmentIndex == 1) {
         NSManagedObject *groups = [self.groups objectAtIndex:indexPath.row];
-        cell.textLabel.text = [groups valueForKey:@"groups"];
+        cell.textLabel.text = [groups valueForKey:@"groups_id"];
     }
     
     
@@ -112,27 +113,27 @@
 
 - (void) refreshTable {
     
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"username" ascending:YES];
-    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
-    
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    [self.managedObjectContext executeFetchRequest:fetchRequest onSuccess:^(NSArray *results) {
-        [self.refreshControl endRefreshing];
-        self.objects = results;
-        [self.tableView reloadData];
+ 
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         
-    } onFailure:^(NSError *error) {
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:self.managedObjectContext];
+        [fetchRequest setEntity:entity];
+        // Edit the sort key as appropriate.
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"username" ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
         
-        [self.refreshControl endRefreshing];
-        NSLog(@"An error %@, %@", error, [error userInfo]);
-    }];
+        [fetchRequest setSortDescriptors:sortDescriptors];
+        [self.managedObjectContext executeFetchRequest:fetchRequest onSuccess:^(NSArray *results) {
+            [self.refreshControl endRefreshing];
+            self.objects = results;
+            [self.tableView reloadData];
+            
+        } onFailure:^(NSError *error) {
+            
+            [self.refreshControl endRefreshing];
+            NSLog(@"An error %@, %@", error, [error userInfo]);
+        }];
+    
 }
 - (void)didReceiveMemoryWarning
 {
@@ -141,8 +142,10 @@
 }
 
 - (IBAction)segmenter:(id)sender {
-    [self.tableView reloadData];
 
+    
+    [self.tableView reloadData];
+    [self refreshTable];
 }
 @end
 

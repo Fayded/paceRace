@@ -9,5 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface Store : NSObject
+{
+    NSString *loggedInUsername;
 
+}
+@property (nonatomic, strong) NSString* loggedInUsername;
+
++ (Store *) sharedStore;
 @end

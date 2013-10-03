@@ -12,7 +12,7 @@
 #import "StackMob.h"
 #import "User.h"
 #import "SWRevealViewController.h"
-
+#import "Store.h"
 
 @interface LoginViewController ()
 
@@ -101,18 +101,21 @@
          
          Be sure to declare variables you are referencing in this block with the __block storage type modifier, including the managedObjectContext property.
          */
-        /*
+        
          // Edit entity name and predicate if you are not using the default user schema with username primary key field.
          NSFetchRequest *userFetch = [[NSFetchRequest alloc] initWithEntityName:@"User"];
          [userFetch setPredicate:[NSPredicate predicateWithFormat:@"username == %@", [results objectForKey:@"username"]]];
          [self.managedObjectContext executeFetchRequest:userFetch onSuccess:^(NSArray *results) {
          NSManagedObject *userObject = [results lastObject];
          // Store userObject somewhere for later use
-         NSLog(@"Fetched user object: %@", userObject);
+         //NSLog(@"Fetched user object: %@", userObject);
+             user = userObject;
+             [self passValues];
+             //NSLog(@"%@",user);
          } onFailure:^(NSError *error) {
          NSLog(@"Error fetching user object: %@", error);
          }];
-         */
+        
         
         
     } onFailure:^(NSError *error) {
@@ -120,8 +123,13 @@
         NSLog(@"Login Fail: %@",error);
         
     }];
+    
+    
 }
-
+-(void) passValues {
+    Store* myStore = [Store sharedStore];
+    myStore.loggedInUsername=user;
+}
 - (IBAction)checkStatus:(id)sender {
     
     if([self.client isLoggedIn]) {

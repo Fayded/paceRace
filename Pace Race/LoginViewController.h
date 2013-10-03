@@ -23,3 +23,6 @@
 - (IBAction)login:(id)sender;
 - (IBAction)checkStatus:(id)sender;
 - (IBAction)logout:(id)sender;@end
+
+NSString *user;
+

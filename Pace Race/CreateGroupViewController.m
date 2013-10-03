@@ -10,11 +10,13 @@
 #import "AppDelegate.h"
 #import "StackMob.h"
 #import "Groups.h"
+#import "User.h"
 @interface CreateGroupViewController ()
 
 @end
 
 @implementation CreateGroupViewController
+@synthesize user, statusLabel;
 - (AppDelegate *)appDelegate {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
@@ -33,7 +35,22 @@
 	// Do any additional setup after loading the view.
     self.managedObjectContext = [[self.appDelegate coreDataStore] contextForCurrentThread];
     self.groupName.delegate = self;
-
+ 
+    
+    //statusLabel.text = user;
+  
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    if([self.client isLoggedIn]) {
+        
+        [self.client getLoggedInUserOnSuccess:^(NSDictionary *result) {
+            self.statusLabel.text = [NSString stringWithFormat:@"Hello, %@", [result objectForKey:@"username"]];
+        } onFailure:^(NSError *error) {
+            NSLog(@"No user found");
+        }];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,13 +64,16 @@
     return NO;
 }
 - (IBAction)createGroupButton:(id)sender {
-   
+    //Store* myStore = [Store sharedStore];
+    //user = myStore.loggedInUsername;
+    
+    
+
     NSManagedObject *newGroup = [NSEntityDescription insertNewObjectForEntityForName:@"Groups" inManagedObjectContext:self.managedObjectContext];
     
     [newGroup setValue:self.groupName.text forKey:@"groups_id"];
-    [newGroup setValue:self.]
-    //[newGroup setValue:[newGroup assignObjectId] forKey:[newGroup primaryKeyField]];
-    
+    NSLog(@"username is %@", user);
+   //[newGroup setValue:self.user forKey:@"members"];
     [self.managedObjectContext saveOnSuccess:^{
         NSLog(@"You created a new object!");
     } onFailure:^(NSError *error) {
