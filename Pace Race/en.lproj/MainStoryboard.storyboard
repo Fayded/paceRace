@@ -1574,12 +1574,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </scenes>
     <resources>
         <image name="menu.png" width="28" height="20"/>
-        <image name="menu.png" width="28" height="20"/>
-        <image name="menu.png" width="28" height="20"/>
-        <image name="menu.png" width="28" height="20"/>
-        <image name="menu.png" width="28" height="20"/>
-        <image name="menu.png" width="28" height="20"/>
-        <image name="menu.png" width="28" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
