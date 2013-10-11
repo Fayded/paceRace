@@ -82,9 +82,9 @@
     */
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    
+    NSString *genderSelection = cell.textLabel.text;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setValue:cell forKey:@"PRUserGender"];
+    [defaults setValue:genderSelection forKey:@"PRUserGender"];
     [defaults synchronize];
 }
 /*

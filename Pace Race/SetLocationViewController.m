@@ -86,7 +86,7 @@
 }
 - (IBAction)setLocationButton:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setValue:self.locationText forKey:@"PRUserLocation"];
+    [defaults setValue:self.locationText.text forKey:@"PRUserLocation"];
     [defaults synchronize];
     [self.navigationController popViewControllerAnimated:YES];
 

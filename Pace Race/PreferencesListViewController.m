@@ -47,6 +47,11 @@
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
 }
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -70,17 +75,17 @@
         NSString *CellIdentifier = [preferencesList objectAtIndex:indexPath.row];
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
-        /*
+        NSString * PRUsernameText = @"craig";
         NSString * PRUserAgeText = [defaults objectForKey:@"PRUserAge"];
         NSString * PRUserGenderText = [defaults objectForKey:@"PRUserGender"];
         NSString * PRUserHeightText = [defaults objectForKey:@"PRUserHeight"];
         NSString * PRUserWeightText = [defaults objectForKey:@"PRUserWeight"];
         NSString * PRUserLoctionText = [defaults objectForKey:@"PRUserLocation"];
 
-        NSMutableArray *detailList = [NSMutableArray arrayWithObjects: PRUserAgeText, PRUserGenderText, PRUserHeightText, PRUserWeightText, PRUserLoctionText, nil];
+        NSMutableArray *detailList = [NSMutableArray arrayWithObjects: PRUsernameText, PRUserLoctionText, PRUserHeightText, PRUserWeightText, PRUserAgeText, PRUserGenderText, nil];
         //NSString *detailIdentifier = [detailList objectAtIndex:indexPath.row];
         cell.detailTextLabel.text = [detailList objectAtIndex:indexPath.row];
-        */
+        
         return cell;
     }
                                       
