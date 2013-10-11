@@ -1,18 +1,18 @@
 //
-//  SharingViewController.m
+//  SetUnitsViewController.m
 //  Pace Race
 //
-//  Created by Craig Hewitt on 10/3/13.
+//  Created by Craig Hewitt on 10/10/13.
 //  Copyright (c) 2013 Craig Hewitt. All rights reserved.
 //
 
-#import "SharingViewController.h"
+#import "SetUnitsViewController.h"
 
-@interface SharingViewController ()
+@interface SetUnitsViewController ()
 
 @end
 
-@implementation SharingViewController
+@implementation SetUnitsViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

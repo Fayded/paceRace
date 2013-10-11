@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWRevealViewController.h"
 
-@interface PreferencesListViewController : UITableViewController
+@interface PreferencesListViewController : UITableViewController  <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
+
 
 @end

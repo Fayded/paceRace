@@ -1,23 +1,19 @@
 //
-//  PreferencesListViewController.m
+//  SetUsernameViewController.m
 //  Pace Race
 //
-//  Created by Craig Hewitt on 10/3/13.
+//  Created by Craig Hewitt on 10/10/13.
 //  Copyright (c) 2013 Craig Hewitt. All rights reserved.
 //
 
-#import "PreferencesListViewController.h"
-#import "SWRevealViewController.h"
+#import "SetUsernameViewController.h"
 
-@interface PreferencesListViewController ()
+@interface SetUsernameViewController ()
 
 @end
 
-@implementation PreferencesListViewController
-{
-    NSArray *preferencesList;
+@implementation SetUsernameViewController
 
-}
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -36,16 +32,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    preferencesList = [NSArray arrayWithObjects:@"Username", @"Units", @"Location", @"Height", @"Weight", @"Age", @"Gender", nil];
-    
-    // Change button color
-    _sidebarButton.tintColor = [UIColor greenColor];
-    
-    
-    
-    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-    _sidebarButton.target = self.revealViewController;
-    _sidebarButton.action = @selector(revealToggle:);
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,44 +44,28 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
-
-
-
-                                      
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-    {
-        NSString *CellIdentifier = [preferencesList objectAtIndex:indexPath.row];
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        
-        return cell;
-    }
-                                      
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-    {
-        return [preferencesList count];
-        
-    }
-  /*
-- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
-    {
-        // Set the title of navigation bar by using the menu items
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
-        destViewController.title = [[preferencesList objectAtIndex:indexPath.row] capitalizedString];
-        
-        
-        if ( [segue.identifier isEqualToString:@"Profile"])
-            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        
-            
-        }
-        
-    }
-   */
+{
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -135,6 +105,16 @@
 }
 */
 
+/*
+#pragma mark - Navigation
 
+// In a story board-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+
+ */
 
 @end

@@ -26,6 +26,16 @@
 		DD79564717FB402F00844A38 /* CreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79564617FB402F00844A38 /* CreateGroupViewController.m */; };
 		DD79564A17FB411E00844A38 /* mydatamodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD79564817FB411E00844A38 /* mydatamodel.xcdatamodeld */; };
 		DD79564D17FB448700844A38 /* Groups.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79564C17FB448700844A38 /* Groups.m */; };
+		DD79565017FD078B00844A38 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79564F17FD078B00844A38 /* Store.m */; };
+		DD79565217FDFE3C00844A38 /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD79565117FDFE3C00844A38 /* 20-gear2.png */; };
+		DD79566117FE0E2000844A38 /* PreferencesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79566017FE0E2000844A38 /* PreferencesListViewController.m */; };
+		DD79566A180797AD00844A38 /* SetUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD795669180797AD00844A38 /* SetUsernameViewController.m */; };
+		DD79566D1807981A00844A38 /* SetUnitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79566C1807981A00844A38 /* SetUnitsViewController.m */; };
+		DD79567C1807987500844A38 /* SetGenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79567B1807987500844A38 /* SetGenderViewController.m */; };
+		DD7956811807A03100844A38 /* SetAgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7956801807A03100844A38 /* SetAgeViewController.m */; };
+		DD7956841807A04000844A38 /* SetHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7956831807A04000844A38 /* SetHeightViewController.m */; };
+		DD7956871807A04A00844A38 /* SetWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7956861807A04A00844A38 /* SetWeightViewController.m */; };
+		DD79568A1807A05700844A38 /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7956891807A05700844A38 /* SetLocationViewController.m */; };
 		DD8BD4C917E9486700D6C8D0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8BD4C817E9486700D6C8D0 /* MapKit.framework */; };
 		DD8CE15F17C6F6C700F48885 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE15E17C6F6C700F48885 /* SWRevealViewController.m */; };
 		DD8CE17617C99C4100F48885 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE17517C99C4100F48885 /* LoginViewController.m */; };
@@ -101,6 +111,25 @@
 		DD79564917FB411E00844A38 /* mydatamodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mydatamodel.xcdatamodel; sourceTree = "<group>"; };
 		DD79564B17FB448700844A38 /* Groups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Groups.h; sourceTree = "<group>"; };
 		DD79564C17FB448700844A38 /* Groups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Groups.m; sourceTree = "<group>"; };
+		DD79564E17FD078B00844A38 /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
+		DD79564F17FD078B00844A38 /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		DD79565117FDFE3C00844A38 /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
+		DD79565F17FE0E2000844A38 /* PreferencesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesListViewController.h; sourceTree = "<group>"; };
+		DD79566017FE0E2000844A38 /* PreferencesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesListViewController.m; sourceTree = "<group>"; };
+		DD795668180797AD00844A38 /* SetUsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUsernameViewController.h; sourceTree = "<group>"; };
+		DD795669180797AD00844A38 /* SetUsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUsernameViewController.m; sourceTree = "<group>"; };
+		DD79566B1807981A00844A38 /* SetUnitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUnitsViewController.h; sourceTree = "<group>"; };
+		DD79566C1807981A00844A38 /* SetUnitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUnitsViewController.m; sourceTree = "<group>"; };
+		DD79567A1807987500844A38 /* SetGenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetGenderViewController.h; sourceTree = "<group>"; };
+		DD79567B1807987500844A38 /* SetGenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGenderViewController.m; sourceTree = "<group>"; };
+		DD79567F1807A03100844A38 /* SetAgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetAgeViewController.h; sourceTree = "<group>"; };
+		DD7956801807A03100844A38 /* SetAgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetAgeViewController.m; sourceTree = "<group>"; };
+		DD7956821807A04000844A38 /* SetHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetHeightViewController.h; sourceTree = "<group>"; };
+		DD7956831807A04000844A38 /* SetHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetHeightViewController.m; sourceTree = "<group>"; };
+		DD7956851807A04A00844A38 /* SetWeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetWeightViewController.h; sourceTree = "<group>"; };
+		DD7956861807A04A00844A38 /* SetWeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetWeightViewController.m; sourceTree = "<group>"; };
+		DD7956881807A05700844A38 /* SetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLocationViewController.h; sourceTree = "<group>"; };
+		DD7956891807A05700844A38 /* SetLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetLocationViewController.m; sourceTree = "<group>"; };
 		DD8BD4C817E9486700D6C8D0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DD8CE15D17C6F6C700F48885 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
 		DD8CE15E17C6F6C700F48885 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
@@ -307,6 +336,11 @@
 				DD4BD4C517B44217004A0C70 /* AppDelegate.h */,
 				DD4BD4C617B44217004A0C70 /* AppDelegate.m */,
 				DD4BD4CE17B44217004A0C70 /* MainStoryboard.storyboard */,
+				DD79567D1807988100844A38 /* Profile */,
+				DD79565F17FE0E2000844A38 /* PreferencesListViewController.h */,
+				DD79566017FE0E2000844A38 /* PreferencesListViewController.m */,
+				DD79564E17FD078B00844A38 /* Store.h */,
+				DD79564F17FD078B00844A38 /* Store.m */,
 				DDB2526F17FB12F50090D210 /* MatchupGroupListViewController.h */,
 				DDB2527017FB12F50090D210 /* MatchupGroupListViewController.m */,
 				DDB2526C17F79CBB0090D210 /* RaceFinishedViewController.h */,
@@ -327,18 +361,7 @@
 				DD8CE17B17C9A13900F48885 /* RaceHistoryViewController.m */,
 				DD8F099117E3A854008EBE5D /* MatchupListViewController.h */,
 				DD8F099217E3A854008EBE5D /* MatchupListViewController.m */,
-				DD8CE17417C99C4100F48885 /* LoginViewController.h */,
-				DD8CE17517C99C4100F48885 /* LoginViewController.m */,
-				DD79564517FB402F00844A38 /* CreateGroupViewController.h */,
-				DD79564617FB402F00844A38 /* CreateGroupViewController.m */,
-				DD8F098217E2C4A4008EBE5D /* CreateUserViewController.h */,
-				DD8F098317E2C4A4008EBE5D /* CreateUserViewController.m */,
-				DD8F097F17E2C180008EBE5D /* User.h */,
-				DD8F098017E2C180008EBE5D /* User.m */,
-				DD8F095017E1546A008EBE5D /* FacebookLoginViewController.h */,
-				DD8F095117E1546A008EBE5D /* FacebookLoginViewController.m */,
-				DD8F096117E15E3A008EBE5D /* TwitterLoginViewController.h */,
-				DD8F096217E15E3A008EBE5D /* TwitterLoginViewController.m */,
+				DD79567E1807989700844A38 /* Login */,
 				DD8CE1A317C9AEAA00F48885 /* SidebarViewController.h */,
 				DD8CE1A417C9AEAA00F48885 /* SidebarViewController.m */,
 				DD4BD4BD17B44217004A0C70 /* Supporting Files */,
@@ -353,6 +376,7 @@
 				DD4BD4BF17B44217004A0C70 /* InfoPlist.strings */,
 				DD4BD4C217B44217004A0C70 /* main.m */,
 				DD8CE1A617C9AF6D00F48885 /* menu.png */,
+				DD79565117FDFE3C00844A38 /* 20-gear2.png */,
 				DD4BD4C417B44217004A0C70 /* Pace Race-Prefix.pch */,
 				DD4BD4C817B44217004A0C70 /* Default.png */,
 				DD4BD4CA17B44217004A0C70 /* Default@2x.png */,
@@ -378,6 +402,46 @@
 				DD4BD4E317B44217004A0C70 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DD79567D1807988100844A38 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DD79567A1807987500844A38 /* SetGenderViewController.h */,
+				DD79567B1807987500844A38 /* SetGenderViewController.m */,
+				DD79566B1807981A00844A38 /* SetUnitsViewController.h */,
+				DD79566C1807981A00844A38 /* SetUnitsViewController.m */,
+				DD795668180797AD00844A38 /* SetUsernameViewController.h */,
+				DD795669180797AD00844A38 /* SetUsernameViewController.m */,
+				DD79567F1807A03100844A38 /* SetAgeViewController.h */,
+				DD7956801807A03100844A38 /* SetAgeViewController.m */,
+				DD7956821807A04000844A38 /* SetHeightViewController.h */,
+				DD7956831807A04000844A38 /* SetHeightViewController.m */,
+				DD7956851807A04A00844A38 /* SetWeightViewController.h */,
+				DD7956861807A04A00844A38 /* SetWeightViewController.m */,
+				DD7956881807A05700844A38 /* SetLocationViewController.h */,
+				DD7956891807A05700844A38 /* SetLocationViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		DD79567E1807989700844A38 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DD8CE17417C99C4100F48885 /* LoginViewController.h */,
+				DD8CE17517C99C4100F48885 /* LoginViewController.m */,
+				DD79564517FB402F00844A38 /* CreateGroupViewController.h */,
+				DD79564617FB402F00844A38 /* CreateGroupViewController.m */,
+				DD8F098217E2C4A4008EBE5D /* CreateUserViewController.h */,
+				DD8F098317E2C4A4008EBE5D /* CreateUserViewController.m */,
+				DD8F097F17E2C180008EBE5D /* User.h */,
+				DD8F098017E2C180008EBE5D /* User.m */,
+				DD8F095017E1546A008EBE5D /* FacebookLoginViewController.h */,
+				DD8F095117E1546A008EBE5D /* FacebookLoginViewController.m */,
+				DD8F096117E15E3A008EBE5D /* TwitterLoginViewController.h */,
+				DD8F096217E15E3A008EBE5D /* TwitterLoginViewController.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		DD8CE15C17C6F6AB00F48885 /* Library */ = {
@@ -567,6 +631,7 @@
 				DD4BD4D017B44217004A0C70 /* MainStoryboard.storyboard in Resources */,
 				DD8CE1A717C9AF6E00F48885 /* menu.png in Resources */,
 				DDA15F6D17E0013500B0A6CF /* CHANGELOG.md in Resources */,
+				DD79565217FDFE3C00844A38 /* 20-gear2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,11 +669,16 @@
 				DD4BD4C317B44217004A0C70 /* main.m in Sources */,
 				DD79564717FB402F00844A38 /* CreateGroupViewController.m in Sources */,
 				DD4BD4C717B44217004A0C70 /* AppDelegate.m in Sources */,
+				DD7956871807A04A00844A38 /* SetWeightViewController.m in Sources */,
+				DD79566D1807981A00844A38 /* SetUnitsViewController.m in Sources */,
 				DD8CE15F17C6F6C700F48885 /* SWRevealViewController.m in Sources */,
 				DD8CE17617C99C4100F48885 /* LoginViewController.m in Sources */,
+				DD79567C1807987500844A38 /* SetGenderViewController.m in Sources */,
 				DDB2526B17F79BCD0090D210 /* SoloRunViewController.m in Sources */,
+				DD79565017FD078B00844A38 /* Store.m in Sources */,
 				DD8CE17C17C9A13900F48885 /* RaceHistoryViewController.m in Sources */,
 				DD8CE17F17C9A41D00F48885 /* ConnectViewController.m in Sources */,
+				DD79568A1807A05700844A38 /* SetLocationViewController.m in Sources */,
 				DD8CE18217C9A4F500F48885 /* NextRunViewController.m in Sources */,
 				DDB2527117FB12F50090D210 /* MatchupGroupListViewController.m in Sources */,
 				DD8CE18517C9A96E00F48885 /* MainViewController.m in Sources */,
@@ -625,9 +695,13 @@
 				DD8F097117E16667008EBE5D /* SMTwitterCredentials.m in Sources */,
 				DD8F098117E2C180008EBE5D /* User.m in Sources */,
 				DD79564D17FB448700844A38 /* Groups.m in Sources */,
+				DD7956811807A03100844A38 /* SetAgeViewController.m in Sources */,
 				DD8F098417E2C4A4008EBE5D /* CreateUserViewController.m in Sources */,
 				DD8F099317E3A854008EBE5D /* MatchupListViewController.m in Sources */,
+				DD7956841807A04000844A38 /* SetHeightViewController.m in Sources */,
 				DD8F099917E75893008EBE5D /* HomeViewController.m in Sources */,
+				DD79566117FE0E2000844A38 /* PreferencesListViewController.m in Sources */,
+				DD79566A180797AD00844A38 /* SetUsernameViewController.m in Sources */,
 				DD8F099C17E79A3F008EBE5D /* Todo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

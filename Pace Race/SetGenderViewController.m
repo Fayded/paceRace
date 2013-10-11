@@ -1,18 +1,18 @@
 //
-//  ProfileViewController.m
+//  SetGenderViewController.m
 //  Pace Race
 //
-//  Created by Craig Hewitt on 10/3/13.
+//  Created by Craig Hewitt on 10/10/13.
 //  Copyright (c) 2013 Craig Hewitt. All rights reserved.
 //
 
-#import "ProfileViewController.h"
+#import "SetGenderViewController.h"
 
-@interface ProfileViewController ()
+@interface SetGenderViewController ()
 
 @end
 
-@implementation ProfileViewController
+@implementation SetGenderViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
