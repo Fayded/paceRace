@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SetWeightViewController : UIViewController
+@interface SetWeightViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+{
+    NSMutableArray *weightList;
+}
+@property (strong, nonatomic) IBOutlet UIPickerView *weightPicker;
+
+@property (strong, nonatomic) IBOutlet UILabel *weightLabel;
+- (IBAction)setWeightButton:(id)sender;
 
 @end

@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface SetAgeViewController : UIViewController
+@interface SetAgeViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource,NSFetchedResultsControllerDelegate>
+
 {
-    NSArray *ageList;
-}@end
+    NSMutableArray *data ;
+
+}
+@property (strong, nonatomic) IBOutlet UIPickerView *agePicker;
+
+@property (strong, nonatomic) IBOutlet UILabel *ageLabel;
+- (IBAction)setAgeButton:(id)sender;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
+@end

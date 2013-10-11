@@ -36,7 +36,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    preferencesList = [NSArray arrayWithObjects:@"Username", @"Units", @"Location", @"Height", @"Weight", @"Age", @"Gender", nil];
+    preferencesList = [NSArray arrayWithObjects:@"Username", @"Location", @"Height", @"Weight", @"Age", @"Gender", nil];
     
     // Change button color
     _sidebarButton.tintColor = [UIColor greenColor];
@@ -62,15 +62,25 @@
     return 1;
 }
 
-
-
-
                                       
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
     {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+ 
         NSString *CellIdentifier = [preferencesList objectAtIndex:indexPath.row];
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
+        /*
+        NSString * PRUserAgeText = [defaults objectForKey:@"PRUserAge"];
+        NSString * PRUserGenderText = [defaults objectForKey:@"PRUserGender"];
+        NSString * PRUserHeightText = [defaults objectForKey:@"PRUserHeight"];
+        NSString * PRUserWeightText = [defaults objectForKey:@"PRUserWeight"];
+        NSString * PRUserLoctionText = [defaults objectForKey:@"PRUserLocation"];
+
+        NSMutableArray *detailList = [NSMutableArray arrayWithObjects: PRUserAgeText, PRUserGenderText, PRUserHeightText, PRUserWeightText, PRUserLoctionText, nil];
+        //NSString *detailIdentifier = [detailList objectAtIndex:indexPath.row];
+        cell.detailTextLabel.text = [detailList objectAtIndex:indexPath.row];
+        */
         return cell;
     }
                                       

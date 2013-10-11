@@ -15,6 +15,11 @@
 @property (nonatomic, retain) NSString * username;
 @property (nonatomic, retain) NSDate * createddate;
 @property (nonatomic, retain) NSDate * lastmoddate;
+@property (nonatomic, retain) NSString * height;
+@property (nonatomic, retain) NSString * gender;
+
+
+
 - (id)initIntoManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SetGenderViewController : UITableViewController
+@interface SetGenderViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

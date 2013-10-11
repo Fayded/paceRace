@@ -13,7 +13,10 @@
 @end
 
 @implementation SetGenderViewController
-
+{
+    NSArray *genderList;
+    
+}
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -32,6 +35,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+        genderList = [NSArray arrayWithObjects:@"Male", @"Female", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,28 +49,44 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    NSString *CellIdentifier = [genderList objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
     
     return cell;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [genderList count];
+    
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   /*
+    UIAlertView *dudeAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Right on" message:@"You're a dude" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *chickAlert = [[UIAlertView alloc]
+                              initWithTitle:@"Right on" message:@"Girl Power!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    // Display Alert Message
+    if([genderList objectAtIndex: indexPath]==0){
+        [dudeAlert show];
+
+    }
+    else [chickAlert show];
+    */
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:cell forKey:@"PRUserGender"];
+    [defaults synchronize];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
