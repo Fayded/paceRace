@@ -29,12 +29,13 @@
 		DD79565017FD078B00844A38 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79564F17FD078B00844A38 /* Store.m */; };
 		DD79565217FDFE3C00844A38 /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD79565117FDFE3C00844A38 /* 20-gear2.png */; };
 		DD79566117FE0E2000844A38 /* PreferencesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79566017FE0E2000844A38 /* PreferencesListViewController.m */; };
-		DD79566A180797AD00844A38 /* SetUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD795669180797AD00844A38 /* SetUsernameViewController.m */; };
 		DD79567C1807987500844A38 /* SetGenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79567B1807987500844A38 /* SetGenderViewController.m */; };
 		DD7956811807A03100844A38 /* SetAgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7956801807A03100844A38 /* SetAgeViewController.m */; };
 		DD7956871807A04A00844A38 /* SetWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7956861807A04A00844A38 /* SetWeightViewController.m */; };
 		DD79568D18086FBC00844A38 /* SetHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79568C18086FBC00844A38 /* SetHeightViewController.m */; };
 		DD795690180879E700844A38 /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79568F180879E700844A38 /* SetLocationViewController.m */; };
+		DD7956931808D1D600844A38 /* SetUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7956921808D1D600844A38 /* SetUsernameViewController.m */; };
+		DD7956991808E03F00844A38 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD7956981808E03F00844A38 /* UserDefaults.plist */; };
 		DD8BD4C917E9486700D6C8D0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8BD4C817E9486700D6C8D0 /* MapKit.framework */; };
 		DD8CE15F17C6F6C700F48885 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE15E17C6F6C700F48885 /* SWRevealViewController.m */; };
 		DD8CE17617C99C4100F48885 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE17517C99C4100F48885 /* LoginViewController.m */; };
@@ -115,8 +116,6 @@
 		DD79565117FDFE3C00844A38 /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
 		DD79565F17FE0E2000844A38 /* PreferencesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesListViewController.h; sourceTree = "<group>"; };
 		DD79566017FE0E2000844A38 /* PreferencesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesListViewController.m; sourceTree = "<group>"; };
-		DD795668180797AD00844A38 /* SetUsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUsernameViewController.h; sourceTree = "<group>"; };
-		DD795669180797AD00844A38 /* SetUsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUsernameViewController.m; sourceTree = "<group>"; };
 		DD79567A1807987500844A38 /* SetGenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetGenderViewController.h; sourceTree = "<group>"; };
 		DD79567B1807987500844A38 /* SetGenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGenderViewController.m; sourceTree = "<group>"; };
 		DD79567F1807A03100844A38 /* SetAgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetAgeViewController.h; sourceTree = "<group>"; };
@@ -127,6 +126,9 @@
 		DD79568C18086FBC00844A38 /* SetHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetHeightViewController.m; sourceTree = "<group>"; };
 		DD79568E180879E700844A38 /* SetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLocationViewController.h; sourceTree = "<group>"; };
 		DD79568F180879E700844A38 /* SetLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetLocationViewController.m; sourceTree = "<group>"; };
+		DD7956911808D1D600844A38 /* SetUsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUsernameViewController.h; sourceTree = "<group>"; };
+		DD7956921808D1D600844A38 /* SetUsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUsernameViewController.m; sourceTree = "<group>"; };
+		DD7956981808E03F00844A38 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = UserDefaults.plist; path = ../UserDefaults.plist; sourceTree = "<group>"; };
 		DD8BD4C817E9486700D6C8D0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DD8CE15D17C6F6C700F48885 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
 		DD8CE15E17C6F6C700F48885 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				DD4BD4BE17B44217004A0C70 /* Pace Race-Info.plist */,
+				DD7956981808E03F00844A38 /* UserDefaults.plist */,
 				DD4BD4BF17B44217004A0C70 /* InfoPlist.strings */,
 				DD4BD4C217B44217004A0C70 /* main.m */,
 				DD8CE1A617C9AF6D00F48885 /* menu.png */,
@@ -404,14 +407,14 @@
 		DD79567D1807988100844A38 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DD7956911808D1D600844A38 /* SetUsernameViewController.h */,
+				DD7956921808D1D600844A38 /* SetUsernameViewController.m */,
 				DD79568E180879E700844A38 /* SetLocationViewController.h */,
 				DD79568F180879E700844A38 /* SetLocationViewController.m */,
 				DD79568B18086FBC00844A38 /* SetHeightViewController.h */,
 				DD79568C18086FBC00844A38 /* SetHeightViewController.m */,
 				DD79567A1807987500844A38 /* SetGenderViewController.h */,
 				DD79567B1807987500844A38 /* SetGenderViewController.m */,
-				DD795668180797AD00844A38 /* SetUsernameViewController.h */,
-				DD795669180797AD00844A38 /* SetUsernameViewController.m */,
 				DD79567F1807A03100844A38 /* SetAgeViewController.h */,
 				DD7956801807A03100844A38 /* SetAgeViewController.m */,
 				DD7956851807A04A00844A38 /* SetWeightViewController.h */,
@@ -626,6 +629,7 @@
 				DD4BD4D017B44217004A0C70 /* MainStoryboard.storyboard in Resources */,
 				DD8CE1A717C9AF6E00F48885 /* menu.png in Resources */,
 				DDA15F6D17E0013500B0A6CF /* CHANGELOG.md in Resources */,
+				DD7956991808E03F00844A38 /* UserDefaults.plist in Resources */,
 				DD79565217FDFE3C00844A38 /* 20-gear2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,6 +678,7 @@
 				DD8CE17F17C9A41D00F48885 /* ConnectViewController.m in Sources */,
 				DD8CE18217C9A4F500F48885 /* NextRunViewController.m in Sources */,
 				DDB2527117FB12F50090D210 /* MatchupGroupListViewController.m in Sources */,
+				DD7956931808D1D600844A38 /* SetUsernameViewController.m in Sources */,
 				DD8CE18517C9A96E00F48885 /* MainViewController.m in Sources */,
 				DD8CE1A517C9AEAA00F48885 /* SidebarViewController.m in Sources */,
 				DD8F094517E1492A008EBE5D /* Entity.m in Sources */,
@@ -695,7 +700,6 @@
 				DD8F099317E3A854008EBE5D /* MatchupListViewController.m in Sources */,
 				DD8F099917E75893008EBE5D /* HomeViewController.m in Sources */,
 				DD79566117FE0E2000844A38 /* PreferencesListViewController.m in Sources */,
-				DD79566A180797AD00844A38 /* SetUsernameViewController.m in Sources */,
 				DD8F099C17E79A3F008EBE5D /* Todo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

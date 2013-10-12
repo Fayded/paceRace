@@ -12,6 +12,7 @@
 {
     NSMutableArray *feetList;
     NSMutableArray *inchesList;
+    NSString *totalHeight;
 }
 @property (strong, nonatomic) IBOutlet UIPickerView *heightPicker;
 @property (strong, nonatomic) IBOutlet UILabel *heightLabel;

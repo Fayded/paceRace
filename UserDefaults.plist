@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PRUserAge</key>
+	<string>21</string>
+	<key>PRUsername</key>
+	<string>Username</string>
+	<key>PRUserGender</key>
+	<string>Male</string>
+	<key>PRUserHeight</key>
+	<string>5&apos;6&quot;</string>
+	<key>PRUserWeight</key>
+	<string>150</string>
+	<key>PRUserLocation</key>
+	<string>Zip Code</string>
+</dict>
+</plist>

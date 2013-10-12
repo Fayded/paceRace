@@ -86,6 +86,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:genderSelection forKey:@"PRUserGender"];
     [defaults synchronize];
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 /*
 // Override to support conditional editing of the table view.

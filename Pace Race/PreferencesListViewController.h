@@ -10,7 +10,14 @@
 #import "SWRevealViewController.h"
 
 @interface PreferencesListViewController : UITableViewController  <UITableViewDelegate, UITableViewDataSource>
-
+{
+    NSString * PRUsernameText;
+    NSString * PRUserAgeText ;
+    NSString * PRUserGenderText ;
+    NSString * PRUserHeightText;
+    NSString * PRUserWeightText ;
+    NSString * PRUserLoctionText ;
+}
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 

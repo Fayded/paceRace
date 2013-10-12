@@ -46,6 +46,7 @@
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
+    
 }
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -53,6 +54,12 @@
 
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+[defaults registerDefaults:[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"UserDefaults" ofType:@"plist"]]];
+
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -75,12 +82,12 @@
         NSString *CellIdentifier = [preferencesList objectAtIndex:indexPath.row];
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
-        NSString * PRUsernameText = @"craig";
-        NSString * PRUserAgeText = [defaults objectForKey:@"PRUserAge"];
-        NSString * PRUserGenderText = [defaults objectForKey:@"PRUserGender"];
-        NSString * PRUserHeightText = [defaults objectForKey:@"PRUserHeight"];
-        NSString * PRUserWeightText = [defaults objectForKey:@"PRUserWeight"];
-        NSString * PRUserLoctionText = [defaults objectForKey:@"PRUserLocation"];
+        PRUsernameText = [defaults objectForKey:@"PRUsername"];
+        PRUserAgeText =  [defaults objectForKey:@"PRUserAge"];
+        PRUserGenderText = [defaults objectForKey:@"PRUserGender"];
+        PRUserHeightText = [defaults objectForKey:@"PRUserHeight"];
+        PRUserWeightText =  [defaults objectForKey:@"PRUserWeight"];
+        PRUserLoctionText =[defaults objectForKey:@"PRUserLocation"];
 
         NSMutableArray *detailList = [NSMutableArray arrayWithObjects: PRUsernameText, PRUserLoctionText, PRUserHeightText, PRUserWeightText, PRUserAgeText, PRUserGenderText, nil];
         //NSString *detailIdentifier = [detailList objectAtIndex:indexPath.row];

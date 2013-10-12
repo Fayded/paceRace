@@ -11,12 +11,13 @@
 #import "StackMob.h"
 @interface SetAgeViewController ()
 
+@property (strong, nonatomic) NSString *age;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
 
 @implementation SetAgeViewController
-
+@synthesize age;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -30,8 +31,24 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.managedObjectContext = [[[SMClient defaultClient] coreDataStore] contextForCurrentThread];
-
+    
+    /*self.managedObjectContext = [[[SMClient defaultClient] coreDataStore] contextForCurrentThread];
+    //self.ageLabel.text = self;
+    
+    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.managedObjectContext];
+    
+    [newManagedObject setValue:@"age here" forKey:@"age"];
+    self.age = [newManagedObject assignObjectId];
+    [newManagedObject setValue:self.age forKey:[newManagedObject primaryKeyField]];
+    
+    NSError *error = nil;
+    if (![self.managedObjectContext saveAndWait:&error]) {
+        NSLog(@"There was an error! %@", error);
+    }
+    else {
+        NSLog(@"You created a new object!");
+    }
+*/
     int rowInt = 20;
     int componentInt = 0;
     data = [[NSMutableArray alloc] init];
@@ -66,6 +83,28 @@
 }
 
 - (IBAction)setAgeButton:(id)sender {
+    /*
+     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"User"];
+    NSPredicate *predicte = [NSPredicate predicateWithFormat:@"age == %@", self.age];
+    [fetchRequest setPredicate:predicte];
+    
+    [self.managedObjectContext executeFetchRequest:fetchRequest onSuccess:^(NSArray *results) {
+        
+        NSManagedObject *todoObject = [results objectAtIndex:0];
+        [todoObject setValue:self.ageLabel.text forKey:@"age"];
+        
+        [self.managedObjectContext saveOnSuccess:^{
+            NSLog(@"You updated the todo object!");
+        } onFailure:^(NSError *error) {
+            NSLog(@"There was an error! %@", error);
+        }];
+        
+    } onFailure:^(NSError *error) {
+        
+        NSLog(@"Error fetching: %@", error);
+        
+    }];
+     */
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:self.ageLabel.text forKey:@"PRUserAge"];
     [defaults synchronize];

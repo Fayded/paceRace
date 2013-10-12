@@ -84,10 +84,11 @@
     else{
     self.inchesLabel.text = [inchesList objectAtIndex: row];
     }
+    totalHeight = [NSString stringWithFormat:@"%@' %@\"", self.heightLabel.text, self.inchesLabel.text, nil];
 }
 - (IBAction)setHeightButton:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setValue:self.heightLabel.text forKey:@"PRUserHeight"];
+    [defaults setValue:totalHeight forKey:@"PRUserHeight"];
     [defaults synchronize];
     [self.navigationController popViewControllerAnimated:YES];
 
