@@ -36,6 +36,8 @@
 		DD795690180879E700844A38 /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79568F180879E700844A38 /* SetLocationViewController.m */; };
 		DD7956931808D1D600844A38 /* SetUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7956921808D1D600844A38 /* SetUsernameViewController.m */; };
 		DD7956991808E03F00844A38 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD7956981808E03F00844A38 /* UserDefaults.plist */; };
+		DD79569B180CC4B000844A38 /* MatchupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD79569A180CC4B000844A38 /* MatchupCell.xib */; };
+		DD7956A1180CC86600844A38 /* MatchupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7956A0180CC86600844A38 /* MatchupCell.m */; };
 		DD8BD4C917E9486700D6C8D0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8BD4C817E9486700D6C8D0 /* MapKit.framework */; };
 		DD8CE15F17C6F6C700F48885 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE15E17C6F6C700F48885 /* SWRevealViewController.m */; };
 		DD8CE17617C99C4100F48885 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CE17517C99C4100F48885 /* LoginViewController.m */; };
@@ -129,6 +131,9 @@
 		DD7956911808D1D600844A38 /* SetUsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUsernameViewController.h; sourceTree = "<group>"; };
 		DD7956921808D1D600844A38 /* SetUsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUsernameViewController.m; sourceTree = "<group>"; };
 		DD7956981808E03F00844A38 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = UserDefaults.plist; path = ../UserDefaults.plist; sourceTree = "<group>"; };
+		DD79569A180CC4B000844A38 /* MatchupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchupCell.xib; sourceTree = "<group>"; };
+		DD79569F180CC86600844A38 /* MatchupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchupCell.h; sourceTree = "<group>"; };
+		DD7956A0180CC86600844A38 /* MatchupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchupCell.m; sourceTree = "<group>"; };
 		DD8BD4C817E9486700D6C8D0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DD8CE15D17C6F6C700F48885 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
 		DD8CE15E17C6F6C700F48885 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
@@ -360,6 +365,9 @@
 				DD8CE17B17C9A13900F48885 /* RaceHistoryViewController.m */,
 				DD8F099117E3A854008EBE5D /* MatchupListViewController.h */,
 				DD8F099217E3A854008EBE5D /* MatchupListViewController.m */,
+				DD79569F180CC86600844A38 /* MatchupCell.h */,
+				DD7956A0180CC86600844A38 /* MatchupCell.m */,
+				DD79569A180CC4B000844A38 /* MatchupCell.xib */,
 				DD79567E1807989700844A38 /* Login */,
 				DD8CE1A317C9AEAA00F48885 /* SidebarViewController.h */,
 				DD8CE1A417C9AEAA00F48885 /* SidebarViewController.m */,
@@ -624,6 +632,7 @@
 			files = (
 				DD4BD4C117B44217004A0C70 /* InfoPlist.strings in Resources */,
 				DD4BD4C917B44217004A0C70 /* Default.png in Resources */,
+				DD79569B180CC4B000844A38 /* MatchupCell.xib in Resources */,
 				DD4BD4CB17B44217004A0C70 /* Default@2x.png in Resources */,
 				DD4BD4CD17B44217004A0C70 /* Default-568h@2x.png in Resources */,
 				DD4BD4D017B44217004A0C70 /* MainStoryboard.storyboard in Resources */,
@@ -689,6 +698,7 @@
 				DD8F096E17E16667008EBE5D /* NSData+Base64.m in Sources */,
 				DDB2526E17F79CBB0090D210 /* RaceFinishedViewController.m in Sources */,
 				DD79568D18086FBC00844A38 /* SetHeightViewController.m in Sources */,
+				DD7956A1180CC86600844A38 /* MatchupCell.m in Sources */,
 				DD8F096F17E16667008EBE5D /* OAuth+Additions.m in Sources */,
 				DD8F097017E16667008EBE5D /* OAuthCore.m in Sources */,
 				DD8F097117E16667008EBE5D /* SMTwitterCredentials.m in Sources */,

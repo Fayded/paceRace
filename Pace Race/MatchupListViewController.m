@@ -10,12 +10,16 @@
 #import "SWRevealViewController.h"
 #import "AppDelegate.h"
 #import "StackMob.h"
+#import "MatchupCell.h"
 @interface MatchupListViewController ()
 
 @end
 
 @implementation MatchupListViewController
-@synthesize segmentControl;
+{
+    NSArray *searchResults;
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -79,33 +83,38 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(segmentControl.selectedSegmentIndex == 0){
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [searchResults count];
+        
+    }
+    else {
         return [self.objects count];
-        }
-        else if(segmentControl.selectedSegmentIndex == 1){
-            return [self.groups count];
-        }else{
-            return 5;
-        }
-    
-    
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+    static NSString *simpleTableIdentifier = @"MatchupCell";
     
-    if (segmentControl.selectedSegmentIndex == 0) {
-        NSManagedObject *object = [self.objects objectAtIndex:indexPath.row];
-        cell.textLabel.text = [object valueForKey:@"username"];
-        cell.detailTextLabel.text = [object valueForKey:@"location"];
+    MatchupCell *cell = (MatchupCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MatchupCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
-    else if(segmentControl.selectedSegmentIndex == 1) {
-        NSManagedObject *groups = [self.groups objectAtIndex:indexPath.row];
-        cell.textLabel.text = [groups valueForKey:@"groups_id"];
+    NSManagedObject *object = [self.objects objectAtIndex:indexPath.row];
+    //NSManagedObject *runObject = [self.avgDistValues objectAtIndex:indexPath.row];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        cell.nameLabel.text = [searchResults objectAtIndex:indexPath.row];
+    } else {
+    cell.nameLabel.text = [object valueForKey:@"username"];
     }
-    
+    //cell.thumbnailImageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
+    //cell.averageDistanceLabel.text = [runObject valueForKey:@"avgDistance"];
+    //cell.averagePaceLabel.text = [runObject valueForKey:@"avgPace"];
+    //cell.nextRunLabel.text = @"next run placeholder";
+    return cell;
     
     
     return cell;
@@ -133,7 +142,27 @@
             [self.refreshControl endRefreshing];
             NSLog(@"An error %@, %@", error, [error userInfo]);
         }];
+  /*
+    NSFetchRequest *fetchRunDataRequest = [[NSFetchRequest alloc] init];
     
+    NSEntityDescription *runDataEntity = [NSEntityDescription entityForName:@"RunData" inManagedObjectContext:self.managedObjectContext];
+    [fetchRunDataRequest setEntity:runDataEntity];
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortRunDataDescriptor = [[NSSortDescriptor alloc] initWithKey:@"avgDistance" ascending:YES];
+    NSArray *sortRunDataDescriptors = [NSArray arrayWithObjects:sortRunDataDescriptor, nil];
+    
+    [fetchRequest setSortDescriptors:sortRunDataDescriptors];
+    [self.managedObjectContext executeFetchRequest:fetchRunDataRequest onSuccess:^(NSArray *runDataResults) {
+        [self.refreshControl endRefreshing];
+        self.avgDistValues = runDataResults;
+        [self.tableView reloadData];
+        
+    } onFailure:^(NSError *error) {
+        
+        [self.refreshControl endRefreshing];
+        NSLog(@"An error %@, %@", error, [error userInfo]);
+    }];
+    */
 }
 - (void)didReceiveMemoryWarning
 {
@@ -141,11 +170,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)segmenter:(id)sender {
-
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate
+                                    predicateWithFormat:@"SELF contains[cd] %@",
+                                    searchText];
     
-    [self.tableView reloadData];
-    [self refreshTable];
+    searchResults = [self.objects filteredArrayUsingPredicate:resultPredicate];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller
+shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    
+    return YES;
 }
 @end
 

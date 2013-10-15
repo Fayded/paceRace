@@ -4,6 +4,11 @@
         <attribute name="groups_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="members" optional="YES" attributeType="Transformable" syncable="YES"/>
     </entity>
+    <entity name="RunData" syncable="YES">
+        <attribute name="avgDistance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="avgPace" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="nextRun" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
     <entity name="RunSchedule" syncable="YES">
         <attribute name="currentruntime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="nextrun" optional="YES" attributeType="Date" syncable="YES"/>
@@ -32,5 +37,6 @@
         <element name="RunSchedule" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Todo" positionX="0" positionY="0" width="0" height="0"/>
         <element name="User" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="RunData" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
