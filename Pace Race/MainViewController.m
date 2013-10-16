@@ -13,6 +13,11 @@
 #import "Todo.h"
 
 @interface MainViewController ()
+{
+    BOOL running;
+    NSTimeInterval secondsAlreadyRun;
+
+}
 
 @property (strong, nonatomic) NSTimer *stopWatchTimer; // Store the timer that fires after a certain time
 @property (strong, nonatomic) NSDate *startDate; // Stores the date of the click on the start button *
@@ -21,6 +26,7 @@
 @end
 
 @implementation MainViewController
+
 
 - (AppDelegate *)appDelegate {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -39,7 +45,6 @@
     self.locationManager.delegate = self;
     self.location = [[CLLocation alloc] init];
   
-
     self.title = @"Race";
     
     // Change button color
@@ -52,7 +57,9 @@
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
     
+   
     }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -85,15 +92,18 @@
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     
+   
     // Create a date formatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm:ss.SS"];
+    [dateFormatter setDateFormat:@"HH:mm:ss"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     
     // Format the elapsed time and set it to the label
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
     self.stopwatchLabel.text = timeString;
 }
+
+
 
 - (void)viewDidAppear:(BOOL)animated  {
     self.startDate = [NSDate date];
@@ -107,23 +117,54 @@
 
 }
 
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    if(!newLocation) return;
+    
+    if ((oldLocation.coordinate.latitude != newLocation.coordinate.latitude) &&
+        (oldLocation.coordinate.longitude != newLocation.coordinate.longitude))
+    {
+        
+        
+        
+        CLLocation *loc1 = [[CLLocation alloc] initWithLatitude:oldLocation.coordinate.latitude longitude:oldLocation.coordinate.longitude];
+        CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:newLocation.coordinate.latitude longitude:newLocation.coordinate.longitude];
 
 
+        
+        CLLocationDistance distance = ([loc2 distanceFromLocation:loc1]) * 0.000621371192;
+        distanceCalculation = &distance;
+        //distance = distance;
+        NSLog(@"Total Distance %f in miles",distance);
+    }
+    
+}
 //CL updates method
 - (void)locationManager:(SMLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    // convert speed units - 1 meter per second = 26.8224 minutes per mile
+    
     self.location = locations.lastObject;
     self.speed.text = [NSString stringWithFormat:@"%f", self.location.speed];
+    self.distanceRun.text = [NSString stringWithFormat:@"%f", distanceCalculation];
     NSLog(@"location is %@", locations);
     
 }
-/*
 
-//calculate distance
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    MainViewController *transferViewController = segue.destinationViewController;
 
- - (CLLocationDistance)distanceFromLocation:(const CLLocation *)location {
- 
- }
- */
+    if ([segue.identifier isEqualToString:@"soloRunSegue"]) {
+       
+    }
+}
+- (IBAction)pauseRunTimer:(id)sender {
+    running = false;
+    NSDate *pausedDate = [[NSDate alloc]init];
+    secondsAlreadyRun += [[NSDate date] timeIntervalSinceDate:pausedDate];
 
+    
+    }
 
 @end

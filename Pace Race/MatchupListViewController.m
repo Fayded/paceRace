@@ -12,6 +12,7 @@
 #import "StackMob.h"
 #import "MatchupCell.h"
 #import "Groups.h"
+#import "LoginViewController.h"
 @interface MatchupListViewController ()
 
 @end
@@ -135,7 +136,6 @@
         //[fetchRequest setSortDescriptors:sortDescriptors];
         [self.managedObjectContext executeFetchRequest:fetchRequest onSuccess:^(NSArray *results) {
             [self.refreshControl endRefreshing];
-            NSLog(@"results are: %@", results);
             self.objects = results;
             [self.tableView reloadData];
             
@@ -157,11 +157,7 @@
         loggedInUsername = [userInfo objectForKey:@"username"];
     } onFailure:^(NSError *notLoggedIn){
         // Error
-        UIAlertView *notLoggedInAlert = [[UIAlertView alloc]
-                                         initWithTitle:@"Not Logged In" message:@"Please log in before selecting a matchup." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        
-        // Display Alert Message
-        [notLoggedInAlert show];
+
     }];
     
     //access nameLable from custom MatchupCell class
@@ -180,11 +176,19 @@
     }];
    
     //set time for next run from nextRun in User entity from selected user
-    UIAlertView *messageAlert = [[UIAlertView alloc]
-                                 initWithTitle:@"Matchup Set" message:@"You're set to race.  Good Luck." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    
-    // Display Alert Message
-    [messageAlert show];
+    if ([[SMClient defaultClient] isLoggedIn ])
+    {
+        UIAlertView *messageAlert = [[UIAlertView alloc]
+                                     initWithTitle:@"Matchup Set" message:@"You're set to race.  Good Luck." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        // Display Alert Message
+        [messageAlert show];
+    }
+    else{
+        UIAlertView *notLoggedInMesage = [[UIAlertView alloc] initWithTitle:@"Not Logged In" message:@"Please Log In To Set Matchup" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [notLoggedInMesage show];
+    }
+   
     
 }
 

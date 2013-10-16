@@ -13,11 +13,16 @@
 
 
 @interface MainViewController : UIViewController <MKMapViewDelegate>
+{
+    double *distanceCalculation;
+
+}
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 @property (strong, nonatomic) IBOutlet UILabel *speed;
 
 @property (strong, nonatomic) IBOutlet UILabel *stopwatchLabel;
+@property (strong, nonatomic) IBOutlet UILabel *distanceRun;
 
 
 //CoreLocation delegate
@@ -25,4 +30,5 @@
 @property (strong, nonatomic) CLLocation *location;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+- (IBAction)pauseRunTimer:(id)sender;
 @end
