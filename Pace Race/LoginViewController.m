@@ -107,11 +107,7 @@
          [userFetch setPredicate:[NSPredicate predicateWithFormat:@"username == %@", [results objectForKey:@"username"]]];
          [self.managedObjectContext executeFetchRequest:userFetch onSuccess:^(NSArray *results) {
          NSManagedObject *userObject = [results lastObject];
-         // Store userObject somewhere for later use
-         //NSLog(@"Fetched user object: %@", userObject);
-             user = userObject;
-             [self passValues];
-             //NSLog(@"%@",user);
+             NSLog(@"userObject is: %@",userObject);
          } onFailure:^(NSError *error) {
          NSLog(@"Error fetching user object: %@", error);
          }];
@@ -126,10 +122,7 @@
     
     
 }
--(void) passValues {
-    Store* myStore = [Store sharedStore];
-    myStore.loggedInUsername=user;
-}
+
 - (IBAction)checkStatus:(id)sender {
     
     if([self.client isLoggedIn]) {

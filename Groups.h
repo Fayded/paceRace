@@ -13,7 +13,10 @@
 @interface Groups : NSManagedObject
 
 @property (nonatomic, retain) NSString * groups_id;
-@property (nonatomic, retain) id members;
+@property (nonatomic, retain) NSString * members;
+@property (nonatomic, retain) NSString * runner;
+
+@property (nonatomic, retain) NSDate *nextRun;
 - (id)initIntoManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

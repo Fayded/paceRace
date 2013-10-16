@@ -18,5 +18,5 @@
 @property (strong, nonatomic) NSArray *groups;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
-- (IBAction)segmenter:(id)sender;
+- (IBAction)refreshTableData:(id)sender;
 @end

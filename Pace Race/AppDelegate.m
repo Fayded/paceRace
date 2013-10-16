@@ -17,7 +17,7 @@
 {
     self.client = [[SMClient alloc] initWithAPIVersion:@"0" publicKey:@"21425c78-6375-45b7-bf0f-7b3638408b80"];
     
-    SM_CACHE_ENABLED = YES;
+    SM_CACHE_ENABLED = NO;
     
     self.coreDataStore = [self.client coreDataStoreWithManagedObjectModel:self.managedObjectModel ];
     self.coreDataStore.cachePolicy = SMCachePolicyTryCacheElseNetwork;

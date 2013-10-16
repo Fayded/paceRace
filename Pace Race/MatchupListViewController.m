@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "StackMob.h"
 #import "MatchupCell.h"
+#import "Groups.h"
 @interface MatchupListViewController ()
 
 @end
@@ -37,8 +38,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
-  
-
+    
     // Change button color
     _sidebarButton.tintColor = [UIColor greenColor];
     
@@ -60,6 +60,12 @@
     [refreshControl beginRefreshing];
     
     [self refreshTable];
+    
+ 
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
 }
 
 - (void)viewDidUnload
@@ -104,36 +110,32 @@
         cell = [nib objectAtIndex:0];
     }
     NSManagedObject *object = [self.objects objectAtIndex:indexPath.row];
-    //NSManagedObject *runObject = [self.avgDistValues objectAtIndex:indexPath.row];
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        cell.nameLabel.text = [searchResults objectAtIndex:indexPath.row];
-    } else {
+    
     cell.nameLabel.text = [object valueForKey:@"username"];
-    }
+    
     //cell.thumbnailImageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
-    //cell.averageDistanceLabel.text = [runObject valueForKey:@"avgDistance"];
-    //cell.averagePaceLabel.text = [runObject valueForKey:@"avgPace"];
-    //cell.nextRunLabel.text = @"next run placeholder";
+    cell.averageDistanceLabel.text = [object valueForKey:@"avgDistance"];
+    cell.averagePaceLabel.text = [object valueForKey:@"avgPace"];
+    cell.nextRunLabel.text = @"next run placeholder";
     return cell;
     
     
-    return cell;
 }
 
 - (void) refreshTable {
-    
- 
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"User"];
         
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:self.managedObjectContext];
-        [fetchRequest setEntity:entity];
+        //NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:self.managedObjectContext];
+        //[fetchRequest setEntity:entity];
         // Edit the sort key as appropriate.
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"username" ascending:YES];
-        NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+        //NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"username" ascending:YES];
+        //NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
         
-        [fetchRequest setSortDescriptors:sortDescriptors];
+        //[fetchRequest setSortDescriptors:sortDescriptors];
         [self.managedObjectContext executeFetchRequest:fetchRequest onSuccess:^(NSArray *results) {
             [self.refreshControl endRefreshing];
+            NSLog(@"results are: %@", results);
             self.objects = results;
             [self.tableView reloadData];
             
@@ -142,52 +144,59 @@
             [self.refreshControl endRefreshing];
             NSLog(@"An error %@, %@", error, [error userInfo]);
         }];
-  /*
-    NSFetchRequest *fetchRunDataRequest = [[NSFetchRequest alloc] init];
-    
-    NSEntityDescription *runDataEntity = [NSEntityDescription entityForName:@"RunData" inManagedObjectContext:self.managedObjectContext];
-    [fetchRunDataRequest setEntity:runDataEntity];
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortRunDataDescriptor = [[NSSortDescriptor alloc] initWithKey:@"avgDistance" ascending:YES];
-    NSArray *sortRunDataDescriptors = [NSArray arrayWithObjects:sortRunDataDescriptor, nil];
-    
-    [fetchRequest setSortDescriptors:sortRunDataDescriptors];
-    [self.managedObjectContext executeFetchRequest:fetchRunDataRequest onSuccess:^(NSArray *runDataResults) {
-        [self.refreshControl endRefreshing];
-        self.avgDistValues = runDataResults;
-        [self.tableView reloadData];
-        
-    } onFailure:^(NSError *error) {
-        
-        [self.refreshControl endRefreshing];
-        NSLog(@"An error %@, %@", error, [error userInfo]);
-    }];
-    */
+
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    __block NSString * loggedInUsername;
+    //get user info and ensure they're logged in
+    [[SMClient defaultClient] getLoggedInUserOnSuccess:^(NSDictionary *userInfo){
+        // Result contains a dictionary representation of the user object
+        NSLog(@"logged in user info: %@", userInfo);
+        loggedInUsername = [userInfo objectForKey:@"username"];
+    } onFailure:^(NSError *notLoggedIn){
+        // Error
+        UIAlertView *notLoggedInAlert = [[UIAlertView alloc]
+                                         initWithTitle:@"Not Logged In" message:@"Please log in before selecting a matchup." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        // Display Alert Message
+        [notLoggedInAlert show];
+    }];
+    
+    //access nameLable from custom MatchupCell class
+    MatchupCell *customCell = (MatchupListViewController*)[tableView cellForRowAtIndexPath:indexPath];
+    NSString *labelText = [[customCell nameLabel] text];
+    
+    //create new object in Entity "Groups"
+    NSManagedObject *newMatchup = [NSEntityDescription insertNewObjectForEntityForName:@"Groups" inManagedObjectContext:self.managedObjectContext];
+    
+    //populate object with names of runners (logged in user and selected row username)
+    [newMatchup setValue:labelText forKey:@"members"];
+    [newMatchup setValue:loggedInUsername forKey:@"runner"];
+    [newMatchup setValue:[newMatchup assignObjectId] forKey:[newMatchup primaryKeyField]];
+    [self.managedObjectContext saveOnSuccess:^{
+    } onFailure:^(NSError *error) {
+    }];
+   
+    //set time for next run from nextRun in User entity from selected user
+    UIAlertView *messageAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Matchup Set" message:@"You're set to race.  Good Luck." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    // Display Alert Message
+    [messageAlert show];
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
-{
-    NSPredicate *resultPredicate = [NSPredicate
-                                    predicateWithFormat:@"SELF contains[cd] %@",
-                                    searchText];
-    
-    searchResults = [self.objects filteredArrayUsingPredicate:resultPredicate];
-}
-
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller
-shouldReloadTableForSearchString:(NSString *)searchString
-{
-    [self filterContentForSearchText:searchString
-                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
-                                      objectAtIndex:[self.searchDisplayController.searchBar
-                                                     selectedScopeButtonIndex]]];
-    
-    return YES;
+- (IBAction)refreshTableData:(id)sender {
+    [self refreshTable];
+    [self.tableView reloadData];
 }
 @end
 

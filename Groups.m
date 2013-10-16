@@ -13,5 +13,6 @@
 
 @dynamic groups_id;
 @dynamic members;
-
+@dynamic runner;
+@dynamic nextRun;
 @end
