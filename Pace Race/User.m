@@ -14,7 +14,7 @@
 @dynamic username;
 @dynamic createddate;
 @dynamic lastmoddate;
-
+@dynamic avgDistance, avgPace, visibleUsername, nextRunDate, nextRunDistance;
 - (id)initIntoManagedObjectContext:(NSManagedObjectContext *)context {
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
     self = [super initWithEntity:entity insertIntoManagedObjectContext:context];

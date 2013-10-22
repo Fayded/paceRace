@@ -14,7 +14,6 @@
 		DD4BD4C317B44217004A0C70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4BD4C217B44217004A0C70 /* main.m */; };
 		DD4BD4C717B44217004A0C70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4BD4C617B44217004A0C70 /* AppDelegate.m */; };
 		DD4BD4C917B44217004A0C70 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4BD4C817B44217004A0C70 /* Default.png */; };
-		DD4BD4CB17B44217004A0C70 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4BD4CA17B44217004A0C70 /* Default@2x.png */; };
 		DD4BD4CD17B44217004A0C70 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4BD4CC17B44217004A0C70 /* Default-568h@2x.png */; };
 		DD4BD4D017B44217004A0C70 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4BD4CE17B44217004A0C70 /* MainStoryboard.storyboard */; };
 		DD4BD4DB17B44217004A0C70 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4BD4DA17B44217004A0C70 /* SenTestingKit.framework */; };
@@ -74,6 +73,10 @@
 		DDB2526B17F79BCD0090D210 /* SoloRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2526A17F79BCD0090D210 /* SoloRunViewController.m */; };
 		DDB2526E17F79CBB0090D210 /* RaceFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2526D17F79CBB0090D210 /* RaceFinishedViewController.m */; };
 		DDB2527117FB12F50090D210 /* MatchupGroupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2527017FB12F50090D210 /* MatchupGroupListViewController.m */; };
+		DDD6859618108CB200166313 /* FacebookShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD6859518108CB200166313 /* FacebookShareViewController.m */; };
+		DDD6859918108CC500166313 /* TwitterShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD6859818108CC500166313 /* TwitterShareViewController.m */; };
+		DDD6859B1813489900166313 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD6859A1813489900166313 /* Default@2x.png */; };
+		DDD6859D181348EB00166313 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD6859C181348EB00166313 /* home.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +101,6 @@
 		DD4BD4C517B44217004A0C70 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DD4BD4C617B44217004A0C70 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DD4BD4C817B44217004A0C70 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		DD4BD4CA17B44217004A0C70 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		DD4BD4CC17B44217004A0C70 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DD4BD4CF17B44217004A0C70 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DD4BD4D917B44217004A0C70 /* Pace RaceTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pace RaceTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +247,12 @@
 		DDB2526D17F79CBB0090D210 /* RaceFinishedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceFinishedViewController.m; sourceTree = "<group>"; };
 		DDB2526F17FB12F50090D210 /* MatchupGroupListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchupGroupListViewController.h; sourceTree = "<group>"; };
 		DDB2527017FB12F50090D210 /* MatchupGroupListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchupGroupListViewController.m; sourceTree = "<group>"; };
+		DDD6859418108CB200166313 /* FacebookShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookShareViewController.h; sourceTree = "<group>"; };
+		DDD6859518108CB200166313 /* FacebookShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookShareViewController.m; sourceTree = "<group>"; };
+		DDD6859718108CC500166313 /* TwitterShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterShareViewController.h; sourceTree = "<group>"; };
+		DDD6859818108CC500166313 /* TwitterShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterShareViewController.m; sourceTree = "<group>"; };
+		DDD6859A1813489900166313 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DDD6859C181348EB00166313 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,11 +391,12 @@
 				DD7956981808E03F00844A38 /* UserDefaults.plist */,
 				DD4BD4BF17B44217004A0C70 /* InfoPlist.strings */,
 				DD4BD4C217B44217004A0C70 /* main.m */,
+				DDD6859C181348EB00166313 /* home.png */,
 				DD8CE1A617C9AF6D00F48885 /* menu.png */,
 				DD79565117FDFE3C00844A38 /* 20-gear2.png */,
 				DD4BD4C417B44217004A0C70 /* Pace Race-Prefix.pch */,
 				DD4BD4C817B44217004A0C70 /* Default.png */,
-				DD4BD4CA17B44217004A0C70 /* Default@2x.png */,
+				DDD6859A1813489900166313 /* Default@2x.png */,
 				DD4BD4CC17B44217004A0C70 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
@@ -415,6 +424,10 @@
 		DD79567D1807988100844A38 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DDD6859718108CC500166313 /* TwitterShareViewController.h */,
+				DDD6859818108CC500166313 /* TwitterShareViewController.m */,
+				DDD6859418108CB200166313 /* FacebookShareViewController.h */,
+				DDD6859518108CB200166313 /* FacebookShareViewController.m */,
 				DD7956911808D1D600844A38 /* SetUsernameViewController.h */,
 				DD7956921808D1D600844A38 /* SetUsernameViewController.m */,
 				DD79568E180879E700844A38 /* SetLocationViewController.h */,
@@ -632,8 +645,9 @@
 			files = (
 				DD4BD4C117B44217004A0C70 /* InfoPlist.strings in Resources */,
 				DD4BD4C917B44217004A0C70 /* Default.png in Resources */,
+				DDD6859D181348EB00166313 /* home.png in Resources */,
+				DDD6859B1813489900166313 /* Default@2x.png in Resources */,
 				DD79569B180CC4B000844A38 /* MatchupCell.xib in Resources */,
-				DD4BD4CB17B44217004A0C70 /* Default@2x.png in Resources */,
 				DD4BD4CD17B44217004A0C70 /* Default-568h@2x.png in Resources */,
 				DD4BD4D017B44217004A0C70 /* MainStoryboard.storyboard in Resources */,
 				DD8CE1A717C9AF6E00F48885 /* menu.png in Resources */,
@@ -694,7 +708,9 @@
 				DD8F095217E1546A008EBE5D /* FacebookLoginViewController.m in Sources */,
 				DDB2526817F79B590090D210 /* StartRunTimerViewController.m in Sources */,
 				DD8F096317E15E3A008EBE5D /* TwitterLoginViewController.m in Sources */,
+				DDD6859618108CB200166313 /* FacebookShareViewController.m in Sources */,
 				DD79564A17FB411E00844A38 /* mydatamodel.xcdatamodeld in Sources */,
+				DDD6859918108CC500166313 /* TwitterShareViewController.m in Sources */,
 				DD8F096E17E16667008EBE5D /* NSData+Base64.m in Sources */,
 				DDB2526E17F79CBB0090D210 /* RaceFinishedViewController.m in Sources */,
 				DD79568D18086FBC00844A38 /* SetHeightViewController.m in Sources */,

@@ -14,7 +14,11 @@
 @interface SoloRunViewController : UIViewController<MKMapViewDelegate>
 {
     double *distanceCalculation;
-    
+    NSString *finalTime;
+    NSString *finalDistance;
+    NSString *finalPace;
+    NSTimeInterval secondsAlreadyRun;
+
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
@@ -29,5 +33,6 @@
 //CoreLocation delegate
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *location;
+@property (nonatomic, retain) CLLocation* oldLocation;
 
 @end

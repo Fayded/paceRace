@@ -12,11 +12,15 @@
 @interface MatchupListViewController : UITableViewController
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSArray *objects;
+@property (strong, nonatomic) NSArray *avgDistanceObjects;
+@property (strong, nonatomic) NSArray *avgPaceObjects;
+@property (strong, nonatomic) NSArray *nextRunObjects;
+
 @property (strong, nonatomic) NSArray *avgDistValues;
 @property (strong, nonatomic) NSArray *avgPaceValues;
 
 @property (strong, nonatomic) NSArray *groups;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
+
 - (IBAction)refreshTableData:(id)sender;
 @end

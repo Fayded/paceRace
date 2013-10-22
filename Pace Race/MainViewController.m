@@ -16,6 +16,10 @@
 {
     BOOL running;
     NSTimeInterval secondsAlreadyRun;
+    NSString *finalTime;
+    NSString *finalDistance;
+    NSString *finalPace;
+    float shortDistance;
 
 }
 
@@ -26,7 +30,7 @@
 @end
 
 @implementation MainViewController
-
+@synthesize oldLocation;
 
 - (AppDelegate *)appDelegate {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -40,11 +44,13 @@
     //CL Location Manager
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.distanceFilter = 5.0;
+    self.locationManager.delegate = self;
+
     [self.locationManager startUpdatingLocation];
     
-    self.locationManager.delegate = self;
     self.location = [[CLLocation alloc] init];
-  
+
     self.title = @"Race";
     
     // Change button color
@@ -58,9 +64,7 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     [UIApplication sharedApplication].idleTimerDisabled = YES;
-    
-   
-    }
+}
 
 - (void) viewWillAppear:(BOOL)animated
 {
@@ -92,7 +96,6 @@
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     
-   
     // Create a date formatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm:ss"];
@@ -114,43 +117,54 @@
                                                          selector:@selector(updateTimer)
                                                          userInfo:nil
                                                           repeats:YES];
+    running = true;
 
 }
 
-- (void)locationManager:(CLLocationManager *)manager
-    didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation
-{
-    if(!newLocation) return;
+
+//CL updates method
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation* newLocation = [locations lastObject];
     
-    if ((oldLocation.coordinate.latitude != newLocation.coordinate.latitude) &&
-        (oldLocation.coordinate.longitude != newLocation.coordinate.longitude))
-    {
-        
-        
-        
-        CLLocation *loc1 = [[CLLocation alloc] initWithLatitude:oldLocation.coordinate.latitude longitude:oldLocation.coordinate.longitude];
-        CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:newLocation.coordinate.latitude longitude:newLocation.coordinate.longitude];
-
-
-        
-        CLLocationDistance distance = ([loc2 distanceFromLocation:loc1]) * 0.000621371192;
-        distanceCalculation = &distance;
-        //distance = distance;
-        NSLog(@"Total Distance %f in miles",distance);
+    NSTimeInterval age = -[newLocation.timestamp timeIntervalSinceNow];
+    
+    if (age > 120) return;    // ignore old (cached) updates
+    
+    if (newLocation.horizontalAccuracy < 0) return;   // ignore invalid udpates
+    
+    // EDIT: need a valid oldLocation to be able to compute distance
+    if (self.oldLocation == nil || self.oldLocation.horizontalAccuracy < 0) {
+        self.oldLocation = newLocation;
+        return;
     }
     
-}
-//CL updates method
-- (void)locationManager:(SMLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    // convert speed units - 1 meter per second = 26.8224 minutes per mile
+    CLLocationDistance distance = [newLocation distanceFromLocation: self.oldLocation];
     
+    NSLog(@"%6.6f/%6.6f to %6.6f/%6.6f for %2.0fm, accuracy +/-%2.0fm",
+          self.oldLocation.coordinate.latitude,
+          self.oldLocation.coordinate.longitude,
+          newLocation.coordinate.latitude,
+          newLocation.coordinate.longitude,
+          distance,
+          newLocation.horizontalAccuracy);
+
+    self.oldLocation = newLocation;    // save newLocation for next time
+    // convert speed to usable label
+    float distanceMoved = 0;
+    float convDist = (float) distance;
+    
+    if((running=true)) {
+distanceMoved = convDist+distance;
+    }
+    NSString* formattedNumber = [NSString stringWithFormat:@"%.02f", distanceMoved];
+    NSLog(@"total Distance is %@", formattedNumber);
     self.location = locations.lastObject;
-    self.speed.text = [NSString stringWithFormat:@"%f", self.location.speed];
-    self.distanceRun.text = [NSString stringWithFormat:@"%f", distanceCalculation];
-    NSLog(@"location is %@", locations);
+    NSString * formattedSpeed = [NSString stringWithFormat:@"%.02f", self.location.speed];
+    self.speed.text = [NSString stringWithFormat:formattedSpeed];
+    self.distanceRun.text = [NSString stringWithFormat:@"%@", formattedNumber];
     
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     MainViewController *transferViewController = segue.destinationViewController;
@@ -158,13 +172,18 @@
     if ([segue.identifier isEqualToString:@"soloRunSegue"]) {
        
     }
+    else if ([segue.identifier isEqualToString:@"summaryFromRace"]) {
+        
+    }
 }
 - (IBAction)pauseRunTimer:(id)sender {
     running = false;
     NSDate *pausedDate = [[NSDate alloc]init];
     secondsAlreadyRun += [[NSDate date] timeIntervalSinceDate:pausedDate];
 
-    
+    self.stopwatchLabel.text = finalTime;
+    self.distanceRun.text = finalDistance;
+    self.speed.text = finalPace;
     }
 
 @end

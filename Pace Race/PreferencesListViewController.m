@@ -36,16 +36,15 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    preferencesList = [NSArray arrayWithObjects:@"Username", @"Location", @"Height", @"Weight", @"Age", @"Gender", nil];
+    preferencesList = [NSArray arrayWithObjects:@"Username", @"Location", @"Height", @"Weight", @"Age", @"Gender", @"Facebook Sharing", @"Twitter Sharing", nil];
     
     // Change button color
     _sidebarButton.tintColor = [UIColor greenColor];
-    
-    
-    
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
+    
+
     
 }
 -(void)viewDidAppear:(BOOL)animated
@@ -71,7 +70,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 3;
 }
 
                                       
@@ -88,9 +87,27 @@
         PRUserHeightText = [defaults objectForKey:@"PRUserHeight"];
         PRUserWeightText =  [defaults objectForKey:@"PRUserWeight"];
         PRUserLoctionText =[defaults objectForKey:@"PRUserLocation"];
-
-        NSMutableArray *detailList = [NSMutableArray arrayWithObjects: PRUsernameText, PRUserLoctionText, PRUserHeightText, PRUserWeightText, PRUserAgeText, PRUserGenderText, nil];
-        //NSString *detailIdentifier = [detailList objectAtIndex:indexPath.row];
+        bool PRUserFBShareState  = [defaults objectForKey:@"PRFBShare"];
+        bool PRUserTwitterShareState = [defaults objectForKey:@"PRTwitterShare"];
+        PRUserTwitterShareState=NO;
+        if((PRUserFBShareState=YES))
+        {
+            PRUserFBShareText = @"Sharing";
+        }
+        else if ((PRUserFBShareState=NO))
+        {
+            PRUserFBShareText = @"Not Sharing";
+        }
+        
+        if((PRUserTwitterShareState = YES))
+        {
+            PRUserTwitterShareText = @"Sharing";
+        }
+        else
+        {
+            PRUserTwitterShareText = @"Not ";
+        }
+        NSMutableArray *detailList = [NSMutableArray arrayWithObjects: PRUsernameText, PRUserLoctionText, PRUserHeightText, PRUserWeightText, PRUserAgeText, PRUserGenderText, PRUserFBShareText, PRUserTwitterShareText, nil];
         cell.detailTextLabel.text = [detailList objectAtIndex:indexPath.row];
         
         return cell;
@@ -156,6 +173,7 @@
     return YES;
 }
 */
+
 
 
 

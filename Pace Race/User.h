@@ -17,7 +17,9 @@
 @property (nonatomic, retain) NSDate * lastmoddate;
 @property (nonatomic, retain) NSString * avgDistance;
 @property (nonatomic, retain) NSString * avgPace;
-
+@property (nonatomic, retain) NSString * visibleUsername;
+@property (nonatomic, retain) NSString * nextRunDistance;
+@property (nonatomic, retain) NSDate * nextRunDate;
 
 
 - (id)initIntoManagedObjectContext:(NSManagedObjectContext *)context;

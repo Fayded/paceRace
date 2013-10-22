@@ -13,6 +13,9 @@
 #import "Todo.h"
 
 @interface SoloRunViewController ()
+{
+    BOOL running;
+}
 
 @property (strong, nonatomic) NSTimer *stopWatchTimer; // Store the timer that fires after a certain time
 @property (strong, nonatomic) NSDate *startDate; // Stores the date of the click on the start button *
@@ -98,44 +101,67 @@
                                                          selector:@selector(updateTimer)
                                                          userInfo:nil
                                                           repeats:YES];
-    
+    running=true;
+
 }
 
-- (void)locationManager:(CLLocationManager *)manager
-    didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation
-{
-    if(!newLocation) return;
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation* newLocation = [locations lastObject];
     
-    if ((oldLocation.coordinate.latitude != newLocation.coordinate.latitude) &&
-        (oldLocation.coordinate.longitude != newLocation.coordinate.longitude))
-    {
-        
-        
-        
-        CLLocation *loc1 = [[CLLocation alloc] initWithLatitude:oldLocation.coordinate.latitude longitude:oldLocation.coordinate.longitude];
-        CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:newLocation.coordinate.latitude longitude:newLocation.coordinate.longitude];
-        
-        
-        
-        CLLocationDistance distance = ([loc2 distanceFromLocation:loc1]) * 0.000621371192;
-        distanceCalculation = &distance;
-        //distance = distance;
-        NSLog(@"Total Distance %f in miles",distance);
+    NSTimeInterval age = -[newLocation.timestamp timeIntervalSinceNow];
+    
+    if (age > 120) return;    // ignore old (cached) updates
+    
+    if (newLocation.horizontalAccuracy < 0) return;   // ignore invalid udpates
+    
+    // EDIT: need a valid oldLocation to be able to compute distance
+    if (self.oldLocation == nil || self.oldLocation.horizontalAccuracy < 0) {
+        self.oldLocation = newLocation;
+        return;
     }
     
+    CLLocationDistance distance = [newLocation distanceFromLocation: self.oldLocation];
+    
+    NSLog(@"%6.6f/%6.6f to %6.6f/%6.6f for %2.0fm, accuracy +/-%2.0fm",
+          self.oldLocation.coordinate.latitude,
+          self.oldLocation.coordinate.longitude,
+          newLocation.coordinate.latitude,
+          newLocation.coordinate.longitude,
+          distance,
+          newLocation.horizontalAccuracy);
+    
+    self.oldLocation = newLocation;    // save newLocation for next time
+    // convert speed to usable label
+    float distanceMoved = 0;
+    float convDist = (float) distance;
+    
+    if((running=true)) {
+        distanceMoved = convDist+distance;
+    }
+    NSString* formattedNumber = [NSString stringWithFormat:@"%.02f", distanceMoved];
+    NSLog(@"total Distance is %@", formattedNumber);
+    self.location = locations.lastObject;
+    NSString * formattedSpeed = [NSString stringWithFormat:@"%.02f", self.location.speed];
+    self.speed.text = [NSString stringWithFormat:formattedSpeed];
+    self.distanceRun.text = [NSString stringWithFormat:@"%@", formattedNumber];
+    
 }
 
-//CL updates method
-- (void)locationManager:(SMLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    self.location = locations.lastObject;
-    self.speed.text = [NSString stringWithFormat:@"%f", self.location.speed];
-    self.distanceRun.text = [NSString stringWithFormat:@"%f", distanceCalculation];
 
-    NSLog(@"location is %@", locations);
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
+   if ([segue.identifier isEqualToString:@"summaryFromSolo"]) {
+        
+    }
 }
 
 - (IBAction)stopRunButton:(id)sender {
+    NSDate *pausedDate = [[NSDate alloc]init];
+    secondsAlreadyRun += [[NSDate date] timeIntervalSinceDate:pausedDate];
+    
+    self.stopwatchLabel.text = finalTime;
+    self.distanceRun.text = finalDistance;
+    self.speed.text = finalPace;
 }
 @end

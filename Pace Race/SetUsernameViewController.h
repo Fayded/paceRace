@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SetUsernameViewController : UIViewController
+@interface SetUsernameViewController : UIViewController<UITextFieldDelegate>
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+@property (strong, nonatomic) IBOutlet UILabel *loggedInUsername;
+@property (strong, nonatomic) IBOutlet UILabel *visibleUsername;
+- (IBAction)saveUsername:(id)sender;
 
 @end

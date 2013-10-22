@@ -8,12 +8,17 @@
 
 #import "NextRunViewController.h"
 #import "SWRevealViewController.h"
+#import "AppDelegate.h"
+#import "StackMob.h"
 
 @interface NextRunViewController ()
 
 @end
 
 @implementation NextRunViewController
+{
+    NSDate *dateInput;
+}
 
 @synthesize dateSelection, runDistance, runDistanceLabel;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -29,6 +34,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.managedObjectContext = [[[SMClient defaultClient] coreDataStore] contextForCurrentThread];
     
     // Change button color
     _sidebarButton.tintColor = [UIColor greenColor];
@@ -62,7 +68,7 @@
     
     //update label with uitext input
     [runDistance addTarget:self action:@selector(textViewDidChange:) forControlEvents:UIControlEventEditingChanged];
-
+    dateInput = [_datepicker date];
 
 }
 - (IBAction)datePickerDateChanged:(id)sender {
@@ -91,4 +97,21 @@
 }
 
 
+- (IBAction)dismissNextRun:(id)sender {
+    
+    NSManagedObject *nextRun = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.managedObjectContext];
+    
+    //populate object with names of runners (logged in user and selected row username)
+    [nextRun setValue:dateInput forKey:@"nextRunDate"];
+    [nextRun setValue:runDistanceLabel.text forKey:@"nextRunDistance"];
+
+    UIAlertView *messageAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Next Run Set" message:@"You're set to run.  Check Back Soon for a Matchup" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    // Display Alert Message
+    [messageAlert show];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+
+}
 @end

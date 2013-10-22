@@ -30,7 +30,6 @@ int secondsLeft;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
     secondsLeft = 3;
     [self countdownTimer];
 }

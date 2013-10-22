@@ -7,8 +7,10 @@
         <attribute name="runner" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="RunData" syncable="YES">
-        <attribute name="avgPace" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="nextRun" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="runDistance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="runPace" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="runTime" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="RunSchedule" syncable="YES">
         <attribute name="currentruntime" optional="YES" attributeType="Date" syncable="YES"/>
@@ -28,8 +30,10 @@
         <attribute name="groups" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastmoddate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="nextRun" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nextRunDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="nextRunDistance" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="visibleUsername" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Groups" positionX="0" positionY="0" width="0" height="0"/>

@@ -18,5 +18,6 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *runDistance;
 - (IBAction)dismissNextRun:(id)sender;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

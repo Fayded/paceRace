@@ -12,7 +12,15 @@
 	<string>5&apos;6&quot;</string>
 	<key>PRUserWeight</key>
 	<string>150</string>
+	<key>PRWeeklyMileage</key>
+	<integer>0</integer>
+	<key>PRAnnualMileage</key>
+	<integer>0</integer>
 	<key>PRUserLocation</key>
 	<string>Zip Code</string>
+	<key>PRFBShare</key>
+	<false/>
+	<key>PRTwitterShare</key>
+	<false/>
 </dict>
 </plist>

@@ -17,8 +17,12 @@
     NSString * PRUserHeightText;
     NSString * PRUserWeightText ;
     NSString * PRUserLoctionText ;
+    NSString * PRUserFBShareText;
+    NSString * PRUserTwitterShareText;
+
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
 
 
 

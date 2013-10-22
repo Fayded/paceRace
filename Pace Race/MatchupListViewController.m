@@ -115,36 +115,42 @@
     cell.nameLabel.text = [object valueForKey:@"username"];
     
     //cell.thumbnailImageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
-    cell.averageDistanceLabel.text = [object valueForKey:@"avgDistance"];
-    cell.averagePaceLabel.text = [object valueForKey:@"avgPace"];
-    cell.nextRunLabel.text = @"next run placeholder";
+    cell.averageDistanceLabel.text = @"5.25 miles";
+    cell.averagePaceLabel.text = @"7:15";
+    cell.nextRunLabel.text = @"10/22 @ 6:00";
     return cell;
     
     
 }
 
+//need to populate fetrequest with dictionary of all User attributes
+
 - (void) refreshTable {
 
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"User"];
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:self.managedObjectContext];
+        [fetchRequest setEntity:entity];
+    [fetchRequest setResultType:NSDictionaryResultType];
+    [fetchRequest setReturnsDistinctResults:YES];
+    [fetchRequest setPropertiesToFetch:[NSArray arrayWithObjects:@"username", @"avgPace", @"avgDistance", @"nextRunDate", nil]];
+    // Edit the sort key as appropriate.
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"username" ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
         
-        //NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:self.managedObjectContext];
-        //[fetchRequest setEntity:entity];
-        // Edit the sort key as appropriate.
-        //NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"username" ascending:YES];
-        //NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
-        
-        //[fetchRequest setSortDescriptors:sortDescriptors];
-        [self.managedObjectContext executeFetchRequest:fetchRequest onSuccess:^(NSArray *results) {
-            [self.refreshControl endRefreshing];
-            self.objects = results;
-            [self.tableView reloadData];
-            
-        } onFailure:^(NSError *error) {
-            
-            [self.refreshControl endRefreshing];
-            NSLog(@"An error %@, %@", error, [error userInfo]);
-        }];
+        [fetchRequest setSortDescriptors:sortDescriptors];
 
+    [self.managedObjectContext executeFetchRequest:fetchRequest onSuccess:^(NSArray *results) {
+        [self.refreshControl endRefreshing];
+        NSLog(@"results are: %@", results);
+        self.objects = results;
+        [self.tableView reloadData];
+        
+    } onFailure:^(NSError *error) {
+        
+        [self.refreshControl endRefreshing];
+        NSLog(@"An error %@, %@", error, [error userInfo]);
+    }];
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

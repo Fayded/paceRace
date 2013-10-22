@@ -12,7 +12,7 @@
 #import <MapKit/MapKit.h>
 
 
-@interface MainViewController : UIViewController <MKMapViewDelegate>
+@interface MainViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 {
     double *distanceCalculation;
 
@@ -28,7 +28,7 @@
 //CoreLocation delegate
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *location;
-
+@property (nonatomic, retain) CLLocation* oldLocation;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 - (IBAction)pauseRunTimer:(id)sender;
 @end
