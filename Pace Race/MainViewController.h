@@ -15,7 +15,8 @@
 @interface MainViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 {
     double *distanceCalculation;
-
+    UIScrollView *scrollView;
+    
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
@@ -31,4 +32,6 @@
 @property (nonatomic, retain) CLLocation* oldLocation;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 - (IBAction)pauseRunTimer:(id)sender;
+
+
 @end

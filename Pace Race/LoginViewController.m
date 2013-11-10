@@ -12,7 +12,6 @@
 #import "StackMob.h"
 #import "User.h"
 #import "SWRevealViewController.h"
-#import "Store.h"
 
 @interface LoginViewController ()
 

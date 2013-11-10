@@ -20,6 +20,8 @@
 @property (nonatomic, retain) NSString * visibleUsername;
 @property (nonatomic, retain) NSString * nextRunDistance;
 @property (nonatomic, retain) NSDate * nextRunDate;
+@property (nonatomic, retain) NSNumber *raceCount;
+@property (nonatomic, retain) NSNumber *raceWinningPercentage;
 
 
 - (id)initIntoManagedObjectContext:(NSManagedObjectContext *)context;

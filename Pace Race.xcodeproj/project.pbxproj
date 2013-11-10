@@ -25,7 +25,6 @@
 		DD79564717FB402F00844A38 /* CreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79564617FB402F00844A38 /* CreateGroupViewController.m */; };
 		DD79564A17FB411E00844A38 /* mydatamodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD79564817FB411E00844A38 /* mydatamodel.xcdatamodeld */; };
 		DD79564D17FB448700844A38 /* Groups.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79564C17FB448700844A38 /* Groups.m */; };
-		DD79565017FD078B00844A38 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79564F17FD078B00844A38 /* Store.m */; };
 		DD79565217FDFE3C00844A38 /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD79565117FDFE3C00844A38 /* 20-gear2.png */; };
 		DD79566117FE0E2000844A38 /* PreferencesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79566017FE0E2000844A38 /* PreferencesListViewController.m */; };
 		DD79567C1807987500844A38 /* SetGenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD79567B1807987500844A38 /* SetGenderViewController.m */; };
@@ -72,11 +71,11 @@
 		DDB2526817F79B590090D210 /* StartRunTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2526717F79B590090D210 /* StartRunTimerViewController.m */; };
 		DDB2526B17F79BCD0090D210 /* SoloRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2526A17F79BCD0090D210 /* SoloRunViewController.m */; };
 		DDB2526E17F79CBB0090D210 /* RaceFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2526D17F79CBB0090D210 /* RaceFinishedViewController.m */; };
-		DDB2527117FB12F50090D210 /* MatchupGroupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2527017FB12F50090D210 /* MatchupGroupListViewController.m */; };
 		DDD6859618108CB200166313 /* FacebookShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD6859518108CB200166313 /* FacebookShareViewController.m */; };
 		DDD6859918108CC500166313 /* TwitterShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD6859818108CC500166313 /* TwitterShareViewController.m */; };
 		DDD6859B1813489900166313 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD6859A1813489900166313 /* Default@2x.png */; };
 		DDD6859D181348EB00166313 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD6859C181348EB00166313 /* home.png */; };
+		DDD685AF1825E0FF00166313 /* RacePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD685AE1825E0FF00166313 /* RacePageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,10 +112,8 @@
 		DD79564517FB402F00844A38 /* CreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateGroupViewController.h; sourceTree = "<group>"; };
 		DD79564617FB402F00844A38 /* CreateGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateGroupViewController.m; sourceTree = "<group>"; };
 		DD79564917FB411E00844A38 /* mydatamodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mydatamodel.xcdatamodel; sourceTree = "<group>"; };
-		DD79564B17FB448700844A38 /* Groups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Groups.h; sourceTree = "<group>"; };
-		DD79564C17FB448700844A38 /* Groups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Groups.m; sourceTree = "<group>"; };
-		DD79564E17FD078B00844A38 /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
-		DD79564F17FD078B00844A38 /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		DD79564B17FB448700844A38 /* Groups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Groups.h; path = ../Groups.h; sourceTree = "<group>"; };
+		DD79564C17FB448700844A38 /* Groups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Groups.m; path = ../Groups.m; sourceTree = "<group>"; };
 		DD79565117FDFE3C00844A38 /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
 		DD79565F17FE0E2000844A38 /* PreferencesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesListViewController.h; sourceTree = "<group>"; };
 		DD79566017FE0E2000844A38 /* PreferencesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesListViewController.m; sourceTree = "<group>"; };
@@ -153,8 +150,8 @@
 		DD8CE1A417C9AEAA00F48885 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		DD8CE1A617C9AF6D00F48885 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		DD8CE1A817C9B23D00F48885 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		DD8F094317E1492A008EBE5D /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
-		DD8F094417E1492A008EBE5D /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
+		DD8F094317E1492A008EBE5D /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entity.h; path = ../Entity.h; sourceTree = "<group>"; };
+		DD8F094417E1492A008EBE5D /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Entity.m; path = ../Entity.m; sourceTree = "<group>"; };
 		DD8F094917E152DE008EBE5D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		DD8F094B17E15311008EBE5D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		DD8F095017E1546A008EBE5D /* FacebookLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookLoginViewController.h; path = ../FacebookLoginViewController.h; sourceTree = "<group>"; };
@@ -179,8 +176,8 @@
 		DD8F099217E3A854008EBE5D /* MatchupListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchupListViewController.m; sourceTree = "<group>"; };
 		DD8F099717E75892008EBE5D /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		DD8F099817E75893008EBE5D /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		DD8F099A17E79A3F008EBE5D /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
-		DD8F099B17E79A3F008EBE5D /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
+		DD8F099A17E79A3F008EBE5D /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Todo.h; path = ../Todo.h; sourceTree = "<group>"; };
+		DD8F099B17E79A3F008EBE5D /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Todo.m; path = ../Todo.m; sourceTree = "<group>"; };
 		DDA15F3517E0013500B0A6CF /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
 		DDA15F3717E0013500B0A6CF /* AFHTTPClient+StackMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPClient+StackMob.h"; sourceTree = "<group>"; };
 		DDA15F3817E0013500B0A6CF /* AFHTTPRequestOperation+RemoveContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestOperation+RemoveContentType.h"; sourceTree = "<group>"; };
@@ -245,14 +242,14 @@
 		DDB2526A17F79BCD0090D210 /* SoloRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoloRunViewController.m; sourceTree = "<group>"; };
 		DDB2526C17F79CBB0090D210 /* RaceFinishedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceFinishedViewController.h; sourceTree = "<group>"; };
 		DDB2526D17F79CBB0090D210 /* RaceFinishedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceFinishedViewController.m; sourceTree = "<group>"; };
-		DDB2526F17FB12F50090D210 /* MatchupGroupListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchupGroupListViewController.h; sourceTree = "<group>"; };
-		DDB2527017FB12F50090D210 /* MatchupGroupListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchupGroupListViewController.m; sourceTree = "<group>"; };
 		DDD6859418108CB200166313 /* FacebookShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookShareViewController.h; sourceTree = "<group>"; };
 		DDD6859518108CB200166313 /* FacebookShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookShareViewController.m; sourceTree = "<group>"; };
 		DDD6859718108CC500166313 /* TwitterShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterShareViewController.h; sourceTree = "<group>"; };
 		DDD6859818108CC500166313 /* TwitterShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterShareViewController.m; sourceTree = "<group>"; };
 		DDD6859A1813489900166313 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		DDD6859C181348EB00166313 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		DDD685AD1825E0FF00166313 /* RacePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RacePageViewController.h; sourceTree = "<group>"; };
+		DDD685AE1825E0FF00166313 /* RacePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RacePageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,29 +288,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD37FD99182F018700AFA012 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD79564B17FB448700844A38 /* Groups.h */,
+				DD79564C17FB448700844A38 /* Groups.m */,
+				DD8F099A17E79A3F008EBE5D /* Todo.h */,
+				DD8F099B17E79A3F008EBE5D /* Todo.m */,
+				DD8F094317E1492A008EBE5D /* Entity.h */,
+				DD8F094417E1492A008EBE5D /* Entity.m */,
+				DD8F097F17E2C180008EBE5D /* User.h */,
+				DD8F098017E2C180008EBE5D /* User.m */,
+			);
+			name = "Data Models";
+			sourceTree = "<group>";
+		};
 		DD4BD4AA17B44217004A0C70 = {
 			isa = PBXGroup;
 			children = (
 				DD79564817FB411E00844A38 /* mydatamodel.xcdatamodeld */,
-				DD79564B17FB448700844A38 /* Groups.h */,
-				DD79564C17FB448700844A38 /* Groups.m */,
-				DD8BD4C817E9486700D6C8D0 /* MapKit.framework */,
-				DD8F099A17E79A3F008EBE5D /* Todo.h */,
-				DD8F099B17E79A3F008EBE5D /* Todo.m */,
-				DD8F097417E16A61008EBE5D /* Accounts.framework */,
-				DD8F097217E16A54008EBE5D /* Twitter.framework */,
 				DD8F096417E16667008EBE5D /* SMTwitterCredentials */,
-				DD8F094B17E15311008EBE5D /* FacebookSDK.framework */,
-				DD8F094917E152DE008EBE5D /* AdSupport.framework */,
-				DD8F094317E1492A008EBE5D /* Entity.h */,
-				DD8F094417E1492A008EBE5D /* Entity.m */,
-				DDA15F7517E0017900B0A6CF /* MobileCoreServices.framework */,
-				DDA15F7317E0017200B0A6CF /* SystemConfiguration.framework */,
-				DDA15F7117E0016B00B0A6CF /* Security.framework */,
-				DDA15F6F17E0015500B0A6CF /* CoreData.framework */,
 				DDA15F3417E0013500B0A6CF /* StackMob-v2.1.1 */,
-				DD8CE1A817C9B23D00F48885 /* Social.framework */,
-				DD4BD53A17B74401004A0C70 /* CoreLocation.framework */,
 				DD4BD4BC17B44217004A0C70 /* Pace Race */,
 				DD4BD4E017B44217004A0C70 /* Pace RaceTests */,
 				DD4BD4B517B44217004A0C70 /* Frameworks */,
@@ -333,6 +328,17 @@
 		DD4BD4B517B44217004A0C70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDA15F7517E0017900B0A6CF /* MobileCoreServices.framework */,
+				DDA15F7317E0017200B0A6CF /* SystemConfiguration.framework */,
+				DDA15F7117E0016B00B0A6CF /* Security.framework */,
+				DDA15F6F17E0015500B0A6CF /* CoreData.framework */,
+				DD8BD4C817E9486700D6C8D0 /* MapKit.framework */,
+				DD8F094B17E15311008EBE5D /* FacebookSDK.framework */,
+				DD8F094917E152DE008EBE5D /* AdSupport.framework */,
+				DD8F097417E16A61008EBE5D /* Accounts.framework */,
+				DD8F097217E16A54008EBE5D /* Twitter.framework */,
+				DD8CE1A817C9B23D00F48885 /* Social.framework */,
+				DD4BD53A17B74401004A0C70 /* CoreLocation.framework */,
 				DD4BD4B617B44217004A0C70 /* UIKit.framework */,
 				DD4BD4B817B44217004A0C70 /* Foundation.framework */,
 				DD4BD4BA17B44217004A0C70 /* CoreGraphics.framework */,
@@ -344,27 +350,27 @@
 		DD4BD4BC17B44217004A0C70 /* Pace Race */ = {
 			isa = PBXGroup;
 			children = (
+				DD37FD99182F018700AFA012 /* Data Models */,
 				DD8CE15C17C6F6AB00F48885 /* Library */,
 				DD4BD4C517B44217004A0C70 /* AppDelegate.h */,
 				DD4BD4C617B44217004A0C70 /* AppDelegate.m */,
 				DD4BD4CE17B44217004A0C70 /* MainStoryboard.storyboard */,
+				DD79567E1807989700844A38 /* Login */,
 				DD79567D1807988100844A38 /* Profile */,
 				DD79565F17FE0E2000844A38 /* PreferencesListViewController.h */,
 				DD79566017FE0E2000844A38 /* PreferencesListViewController.m */,
-				DD79564E17FD078B00844A38 /* Store.h */,
-				DD79564F17FD078B00844A38 /* Store.m */,
-				DDB2526F17FB12F50090D210 /* MatchupGroupListViewController.h */,
-				DDB2527017FB12F50090D210 /* MatchupGroupListViewController.m */,
 				DDB2526C17F79CBB0090D210 /* RaceFinishedViewController.h */,
 				DDB2526D17F79CBB0090D210 /* RaceFinishedViewController.m */,
-				DDB2526917F79BCD0090D210 /* SoloRunViewController.h */,
-				DDB2526A17F79BCD0090D210 /* SoloRunViewController.m */,
 				DDB2526617F79B590090D210 /* StartRunTimerViewController.h */,
 				DDB2526717F79B590090D210 /* StartRunTimerViewController.m */,
 				DD8F099717E75892008EBE5D /* HomeViewController.h */,
 				DD8F099817E75893008EBE5D /* HomeViewController.m */,
+				DDB2526917F79BCD0090D210 /* SoloRunViewController.h */,
+				DDB2526A17F79BCD0090D210 /* SoloRunViewController.m */,
 				DD8CE18317C9A96E00F48885 /* MainViewController.h */,
 				DD8CE18417C9A96E00F48885 /* MainViewController.m */,
+				DDD685AD1825E0FF00166313 /* RacePageViewController.h */,
+				DDD685AE1825E0FF00166313 /* RacePageViewController.m */,
 				DD8CE18017C9A4F500F48885 /* NextRunViewController.h */,
 				DD8CE18117C9A4F500F48885 /* NextRunViewController.m */,
 				DD8CE17D17C9A41D00F48885 /* ConnectViewController.h */,
@@ -375,8 +381,6 @@
 				DD8F099217E3A854008EBE5D /* MatchupListViewController.m */,
 				DD79569F180CC86600844A38 /* MatchupCell.h */,
 				DD7956A0180CC86600844A38 /* MatchupCell.m */,
-				DD79569A180CC4B000844A38 /* MatchupCell.xib */,
-				DD79567E1807989700844A38 /* Login */,
 				DD8CE1A317C9AEAA00F48885 /* SidebarViewController.h */,
 				DD8CE1A417C9AEAA00F48885 /* SidebarViewController.m */,
 				DD4BD4BD17B44217004A0C70 /* Supporting Files */,
@@ -387,6 +391,7 @@
 		DD4BD4BD17B44217004A0C70 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DD79569A180CC4B000844A38 /* MatchupCell.xib */,
 				DD4BD4BE17B44217004A0C70 /* Pace Race-Info.plist */,
 				DD7956981808E03F00844A38 /* UserDefaults.plist */,
 				DD4BD4BF17B44217004A0C70 /* InfoPlist.strings */,
@@ -453,8 +458,6 @@
 				DD79564617FB402F00844A38 /* CreateGroupViewController.m */,
 				DD8F098217E2C4A4008EBE5D /* CreateUserViewController.h */,
 				DD8F098317E2C4A4008EBE5D /* CreateUserViewController.m */,
-				DD8F097F17E2C180008EBE5D /* User.h */,
-				DD8F098017E2C180008EBE5D /* User.m */,
 				DD8F095017E1546A008EBE5D /* FacebookLoginViewController.h */,
 				DD8F095117E1546A008EBE5D /* FacebookLoginViewController.m */,
 				DD8F096117E15E3A008EBE5D /* TwitterLoginViewController.h */,
@@ -696,11 +699,9 @@
 				DD8CE17617C99C4100F48885 /* LoginViewController.m in Sources */,
 				DD79567C1807987500844A38 /* SetGenderViewController.m in Sources */,
 				DDB2526B17F79BCD0090D210 /* SoloRunViewController.m in Sources */,
-				DD79565017FD078B00844A38 /* Store.m in Sources */,
 				DD8CE17C17C9A13900F48885 /* RaceHistoryViewController.m in Sources */,
 				DD8CE17F17C9A41D00F48885 /* ConnectViewController.m in Sources */,
 				DD8CE18217C9A4F500F48885 /* NextRunViewController.m in Sources */,
-				DDB2527117FB12F50090D210 /* MatchupGroupListViewController.m in Sources */,
 				DD7956931808D1D600844A38 /* SetUsernameViewController.m in Sources */,
 				DD8CE18517C9A96E00F48885 /* MainViewController.m in Sources */,
 				DD8CE1A517C9AEAA00F48885 /* SidebarViewController.m in Sources */,
@@ -720,6 +721,7 @@
 				DD8F097117E16667008EBE5D /* SMTwitterCredentials.m in Sources */,
 				DD795690180879E700844A38 /* SetLocationViewController.m in Sources */,
 				DD8F098117E2C180008EBE5D /* User.m in Sources */,
+				DDD685AF1825E0FF00166313 /* RacePageViewController.m in Sources */,
 				DD79564D17FB448700844A38 /* Groups.m in Sources */,
 				DD7956811807A03100844A38 /* SetAgeViewController.m in Sources */,
 				DD8F098417E2C4A4008EBE5D /* CreateUserViewController.m in Sources */,

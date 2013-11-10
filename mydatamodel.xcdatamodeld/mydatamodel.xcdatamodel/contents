@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Groups" representedClassName="Groups" syncable="YES">
+        <attribute name="avgDistance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avgPace" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groupName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="groups_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="members" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nextRun" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="nextRunDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="nextRunDistance" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="runner" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="RunData" syncable="YES">
@@ -32,6 +37,8 @@
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nextRunDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="nextRunDistance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="raceCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="raceWinningPercentage" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="visibleUsername" optional="YES" attributeType="String" syncable="YES"/>
     </entity>

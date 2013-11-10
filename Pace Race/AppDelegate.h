@@ -18,5 +18,6 @@
 @property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (strong, nonatomic) SMCoreDataStore *coreDataStore;
 @property (strong, nonatomic) ViewController *viewController;
-
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @end

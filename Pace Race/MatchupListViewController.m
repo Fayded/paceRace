@@ -37,7 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     // Change button color
@@ -62,7 +62,7 @@
     
     [self refreshTable];
     
- 
+    
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -101,7 +101,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
     static NSString *simpleTableIdentifier = @"MatchupCell";
     
     MatchupCell *cell = (MatchupCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -115,9 +115,11 @@
     cell.nameLabel.text = [object valueForKey:@"username"];
     
     //cell.thumbnailImageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
-    cell.averageDistanceLabel.text = @"5.25 miles";
-    cell.averagePaceLabel.text = @"7:15";
-    cell.nextRunLabel.text = @"10/22 @ 6:00";
+    cell.averageDistanceLabel.text = [object valueForKey:@"avgDistance"];
+    cell.averagePaceLabel.text = [object valueForKey:@"avgPace"];
+    //cell.nextRunLabel.text = [[object valueForKey:@"nextRunDate"] stringValue];
+    cell.raceCountLabel.text = [[object valueForKey:@"raceCount"] stringValue];
+    cell.raceWinningPercentage.text = [[object valueForKey:@"raceWinningPercentage"] stringValue];
     return cell;
     
     
@@ -126,19 +128,19 @@
 //need to populate fetrequest with dictionary of all User attributes
 
 - (void) refreshTable {
-
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:self.managedObjectContext];
-        [fetchRequest setEntity:entity];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
     [fetchRequest setResultType:NSDictionaryResultType];
     [fetchRequest setReturnsDistinctResults:YES];
-    [fetchRequest setPropertiesToFetch:[NSArray arrayWithObjects:@"username", @"avgPace", @"avgDistance", @"nextRunDate", nil]];
+    [fetchRequest setPropertiesToFetch:[NSArray arrayWithObjects:@"username", @"avgPace", @"avgDistance", @"nextRunDate", @"raceCount", @"raceWinningPercentage", nil]];
     // Edit the sort key as appropriate.
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"username" ascending:YES];
-        NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
-        
-        [fetchRequest setSortDescriptors:sortDescriptors];
-
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"username" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
     [self.managedObjectContext executeFetchRequest:fetchRequest onSuccess:^(NSArray *results) {
         [self.refreshControl endRefreshing];
         NSLog(@"results are: %@", results);
@@ -153,6 +155,8 @@
     
 }
 
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     __block NSString * loggedInUsername;
@@ -163,7 +167,7 @@
         loggedInUsername = [userInfo objectForKey:@"username"];
     } onFailure:^(NSError *notLoggedIn){
         // Error
-
+        
     }];
     
     //access nameLable from custom MatchupCell class
@@ -180,7 +184,7 @@
     [self.managedObjectContext saveOnSuccess:^{
     } onFailure:^(NSError *error) {
     }];
-   
+    
     //set time for next run from nextRun in User entity from selected user
     if ([[SMClient defaultClient] isLoggedIn ])
     {
@@ -194,7 +198,7 @@
         UIAlertView *notLoggedInMesage = [[UIAlertView alloc] initWithTitle:@"Not Logged In" message:@"Please Log In To Set Matchup" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [notLoggedInMesage show];
     }
-   
+    
     
 }
 
@@ -209,4 +213,3 @@
     [self.tableView reloadData];
 }
 @end
-

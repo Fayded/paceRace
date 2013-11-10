@@ -13,6 +13,9 @@
 @property (nonatomic, weak) IBOutlet UILabel *averagePaceLabel;
 @property (nonatomic, weak) IBOutlet UILabel *averageDistanceLabel;
 @property (nonatomic, weak) IBOutlet UILabel *nextRunLabel;
+@property (weak, nonatomic) IBOutlet UILabel *raceCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *raceWinningPercentage;
+
 
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
 @end

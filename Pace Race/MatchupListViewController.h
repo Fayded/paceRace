@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SWRevealViewController.h"
 #import <CoreData/CoreData.h>
-@interface MatchupListViewController : UITableViewController
+@interface MatchupListViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSArray *objects;
 @property (strong, nonatomic) NSArray *avgDistanceObjects;
 @property (strong, nonatomic) NSArray *avgPaceObjects;

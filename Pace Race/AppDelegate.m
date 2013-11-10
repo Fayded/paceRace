@@ -12,6 +12,7 @@
 
 
 @implementation AppDelegate
+@synthesize fetchedResultsController, managedObjectContext;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

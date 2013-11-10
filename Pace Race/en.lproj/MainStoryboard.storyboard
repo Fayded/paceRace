@@ -189,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQR-uc-83u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3206" y="1025"/>
+            <point key="canvasLocation" x="1686" y="119"/>
         </scene>
         <!--Solo Run View Controller - Solo Run-->
         <scene sceneID="i9w-pR-E73">
@@ -313,6 +313,7 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
+                    <navigationItem key="navigationItem" id="29g-7J-ODs"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
                         <outlet property="distanceRun" destination="HdN-zV-1Vn" id="NkZ-r9-M3h"/>
@@ -636,7 +637,7 @@
                                     <constraint firstItem="tif-3d-H2N" firstAttribute="top" secondItem="qJn-jk-90D" secondAttribute="top" constant="11" id="Khs-dZ-U5k"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="7kn-Qm-f2J" kind="custom" customClass="SWRevealViewControllerSegue" id="yBd-ag-acC"/>
+                                    <segue destination="7kn-Qm-f2J" kind="custom" customClass="SWRevealViewControllerSegue" id="HK5-el-5bp"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Next Run" id="LeD-Is-1aQ">
@@ -684,7 +685,7 @@
                                     <constraint firstItem="yih-fx-rHL" firstAttribute="top" secondItem="DSM-xb-kK2" secondAttribute="top" constant="11" id="fS2-h4-65c"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="4co-ME-l0A" kind="custom" customClass="SWRevealViewControllerSegue" id="1aQ-TK-EHh"/>
+                                    <segue destination="4co-ME-l0A" kind="custom" customClass="SWRevealViewControllerSegue" id="WQr-2v-tGo"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Race History" id="xGW-6Z-UKK">
@@ -919,6 +920,14 @@
             </objects>
             <point key="canvasLocation" x="1246" y="-278"/>
         </scene>
+        <!--Race Page View Controller-->
+        <scene sceneID="rNn-x3-Wlq">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ZT2-93-aho" customClass="RacePageViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fi1-l0-wKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1757" y="-511"/>
+        </scene>
         <!--Login View Controller - Login-->
         <scene sceneID="yeX-RA-u3h">
             <objects>
@@ -1150,31 +1159,31 @@
             </objects>
             <point key="canvasLocation" x="2421" y="-1997"/>
         </scene>
-        <!--Matchup List View Controller - Matchup-->
+        <!--Matchup List View Controller - Individual-->
         <scene sceneID="Xup-nF-tHU">
             <objects>
-                <tableViewController title="Matchup" id="4co-ME-l0A" customClass="MatchupListViewController" sceneMemberID="viewController">
+                <tableViewController title="Individual" id="4co-ME-l0A" customClass="MatchupListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="jWz-jj-WBf">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="S59-Qm-eLf" detailTextLabel="ZFZ-AM-YIQ" rowHeight="65" style="IBUITableViewCellStyleValue1" id="YUC-et-Mni">
-                                <rect key="frame" x="0.0" y="22" width="320" height="65"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="S59-Qm-eLf" detailTextLabel="ZFZ-AM-YIQ" rowHeight="73" style="IBUITableViewCellStyleValue1" id="YUC-et-Mni">
+                                <rect key="frame" x="0.0" y="22" width="320" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S59-Qm-eLf">
-                                            <rect key="frame" x="10" y="22" width="34" height="21"/>
+                                            <rect key="frame" x="10" y="26" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZFZ-AM-YIQ">
-                                            <rect key="frame" x="246" y="22" width="44" height="21"/>
+                                            <rect key="frame" x="246" y="26" width="44" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
@@ -1190,6 +1199,7 @@
                             <outlet property="delegate" destination="4co-ME-l0A" id="tw4-BL-Fhu"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Individual" id="Cvo-sZ-TJe"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="I8K-5T-v0T">
                         <nil key="title"/>
@@ -1205,22 +1215,23 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
-                        <outlet property="searchDisplayController" destination="GJ9-t5-D7b" id="n11-p7-M7e"/>
+                        <outlet property="searchDisplayController" destination="BUS-eM-FwA" id="7Kp-7g-V9o"/>
                         <outlet property="sidebarButton" destination="02p-Ho-zMS" id="MbQ-6J-aOf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OdN-t1-FPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="shn-fO-f4a"/>
-                <searchDisplayController id="GJ9-t5-D7b">
+                <searchDisplayController id="GJ9-t5-D7b"/>
+                <searchDisplayController id="BUS-eM-FwA">
                     <connections>
-                        <outlet property="delegate" destination="4co-ME-l0A" id="8Lf-hn-Pwt"/>
-                        <outlet property="searchContentsController" destination="4co-ME-l0A" id="aVc-ZJ-3dh"/>
-                        <outlet property="searchResultsDataSource" destination="4co-ME-l0A" id="tnS-dR-smO"/>
-                        <outlet property="searchResultsDelegate" destination="4co-ME-l0A" id="1jG-AT-Ucq"/>
+                        <outlet property="delegate" destination="4co-ME-l0A" id="uOD-5U-39J"/>
+                        <outlet property="searchContentsController" destination="4co-ME-l0A" id="hbT-cP-zsq"/>
+                        <outlet property="searchResultsDataSource" destination="4co-ME-l0A" id="bEV-Va-zdN"/>
+                        <outlet property="searchResultsDelegate" destination="4co-ME-l0A" id="VGg-79-43X"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1226" y="-996"/>
+            <point key="canvasLocation" x="1145" y="-920"/>
         </scene>
         <!--Create Group View Controller-->
         <scene sceneID="CNv-MI-TeE">
@@ -1306,7 +1317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwq-I5-ika" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1752" y="-1001"/>
+            <point key="canvasLocation" x="2278" y="-1001"/>
         </scene>
         <!--Create User View Controller-->
         <scene sceneID="hE7-zD-jYd">
@@ -1377,7 +1388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhF-u2-eOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2230" y="-1385"/>
+            <point key="canvasLocation" x="2756" y="-1385"/>
         </scene>
         <!--Facebook Login View Controller - Facebook Login-->
         <scene sceneID="5pi-lJ-Q6P">
@@ -2507,7 +2518,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="e0G-BJ-rb4"/>
-        <segue reference="ZyR-SQ-qzz"/>
+        <segue reference="HK5-el-5bp"/>
         <segue reference="NDR-UI-1SK"/>
     </inferredMetricsTieBreakers>
 </document>

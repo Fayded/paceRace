@@ -35,6 +35,9 @@
 - (AppDelegate *)appDelegate {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers {
+	return NO;
+}
 
 
 - (void)viewDidLoad
@@ -70,15 +73,23 @@
 {
     UIViewController *viewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"StartRunTimer"];
     [self presentViewController:viewController animated:YES completion:nil];
+    
+
 
 }
 
+
+
+- (void)viewDidDisappear:(BOOL)animated {
+
+	[super viewDidDisappear:animated];
+}
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     [self setMapView:nil];
     // Release any retained subviews of the main view.
-    
+
     
 }
 
@@ -150,11 +161,10 @@
 
     self.oldLocation = newLocation;    // save newLocation for next time
     // convert speed to usable label
-    float distanceMoved = 0;
+    float distanceMoved = 0.0;
     float convDist = (float) distance;
-    
     if((running=true)) {
-distanceMoved = convDist+distance;
+        distanceMoved += convDist;
     }
     NSString* formattedNumber = [NSString stringWithFormat:@"%.02f", distanceMoved];
     NSLog(@"total Distance is %@", formattedNumber);
