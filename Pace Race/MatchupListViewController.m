@@ -12,8 +12,12 @@
 #import "StackMob.h"
 #import "MatchupCell.h"
 #import "Groups.h"
+#import "User.h"
 #import "LoginViewController.h"
+
 @interface MatchupListViewController ()
+
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
 
 @end
 
@@ -21,7 +25,7 @@
 {
     NSArray *searchResults;
 }
-
+@synthesize fetchedResultsController;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -37,8 +41,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     // Change button color
     _sidebarButton.tintColor = [UIColor greenColor];
@@ -52,20 +54,14 @@
     
     self.managedObjectContext = [[self.appDelegate coreDataStore] contextForCurrentThread];
     
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc]
-                                        init];
-    [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
-    
-    self.refreshControl  = refreshControl;
-    
-    [refreshControl beginRefreshing];
-    
-    [self refreshTable];
-    
-    
+    [self setupFetchedResultsController];
 }
--(void)viewWillAppear:(BOOL)animated
+
+- (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    [self.tableView deselectRowAtIndexPath:selectedIndexPath animated:YES];
     [self.tableView reloadData];
 }
 
@@ -80,28 +76,61 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+- (NSDateFormatter *)dateFormatter {
+    if (!_dateFormatter) {
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        [_dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    }
+    
+    return _dateFormatter;
+}
+- (void)configureCell:(MatchupCell *)cell forEntry:(User *)entry {
+    
+    cell.nameLabel.text = entry.username;
+    cell.averageDistanceLabel.text = [entry valueForKey:@"avgDistance"];
+    cell.averagePaceLabel.text = [entry valueForKey:@"avgPace"];
+    cell.nextRunLabel.text = [self.dateFormatter stringFromDate:entry.nextRunDate];
+    cell.raceCountLabel.text = [[entry valueForKey:@"raceCount"] stringValue];
+    cell.raceWinningPercentage.text = [[entry valueForKey:@"raceWinningPercentage"] stringValue];
+}
+
+- (NSFetchRequest *)fetchRequest {
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    NSSortDescriptor *sortByUsername = [NSSortDescriptor sortDescriptorWithKey:@"username" ascending:YES];
+    [fetchRequest setSortDescriptors:@[sortByUsername]];
+    return fetchRequest;
+}
+
+- (void)setupFetchedResultsController {
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:[self fetchRequest]
+                                                                        managedObjectContext:self.managedObjectContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+    self.fetchedResultsController.delegate = self;
+    
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        NSLog(@"ERROR: %@", error);
+        [[[UIAlertView alloc] initWithTitle:@"Error"
+                                    message:@"Couldn't fetch entries :("
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+    }
+}
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [[self.fetchedResultsController sections] count];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return [searchResults count];
-        
-    }
-    else {
-        return [self.objects count];
-    }
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    id sectionInfo = [self.fetchedResultsController sections][section];
+    return [sectionInfo numberOfObjects];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"MatchupCell";
     
     MatchupCell *cell = (MatchupCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -110,51 +139,11 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MatchupCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    NSManagedObject *object = [self.objects objectAtIndex:indexPath.row];
+    User *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self configureCell:cell forEntry:item];
     
-    cell.nameLabel.text = [object valueForKey:@"username"];
-    
-    //cell.thumbnailImageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
-    cell.averageDistanceLabel.text = [object valueForKey:@"avgDistance"];
-    cell.averagePaceLabel.text = [object valueForKey:@"avgPace"];
-    //cell.nextRunLabel.text = [[object valueForKey:@"nextRunDate"] stringValue];
-    cell.raceCountLabel.text = [[object valueForKey:@"raceCount"] stringValue];
-    cell.raceWinningPercentage.text = [[object valueForKey:@"raceWinningPercentage"] stringValue];
     return cell;
-    
-    
 }
-
-//need to populate fetrequest with dictionary of all User attributes
-
-- (void) refreshTable {
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    [fetchRequest setResultType:NSDictionaryResultType];
-    [fetchRequest setReturnsDistinctResults:YES];
-    [fetchRequest setPropertiesToFetch:[NSArray arrayWithObjects:@"username", @"avgPace", @"avgDistance", @"nextRunDate", @"raceCount", @"raceWinningPercentage", nil]];
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"username" ascending:YES];
-    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
-    
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    [self.managedObjectContext executeFetchRequest:fetchRequest onSuccess:^(NSArray *results) {
-        [self.refreshControl endRefreshing];
-        NSLog(@"results are: %@", results);
-        self.objects = results;
-        [self.tableView reloadData];
-        
-    } onFailure:^(NSError *error) {
-        
-        [self.refreshControl endRefreshing];
-        NSLog(@"An error %@, %@", error, [error userInfo]);
-    }];
-    
-}
-
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -209,7 +198,8 @@
 }
 
 - (IBAction)refreshTableData:(id)sender {
-    [self refreshTable];
     [self.tableView reloadData];
 }
+
+
 @end
