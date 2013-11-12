@@ -9,10 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "SWRevealViewController.h"
 #import <CoreData/CoreData.h>
-@interface MatchupListViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface MatchupListViewController : UITableViewController <NSFetchedResultsControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) NSMutableArray *searchResults;
+
+
+@property (nonatomic, copy) NSString *savedSearchTerm;
+@property (nonatomic) NSInteger savedScopeButtonIndex;
+@property (nonatomic) BOOL searchWasActive;
 
 @property (strong, nonatomic) NSArray *objects;
 @property (strong, nonatomic) NSArray *avgDistanceObjects;

@@ -22,10 +22,8 @@
 @end
 
 @implementation MatchupListViewController
-{
-    NSArray *searchResults;
-}
-@synthesize fetchedResultsController;
+
+@synthesize fetchedResultsController, searchResults;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -55,6 +53,9 @@
     self.managedObjectContext = [[self.appDelegate coreDataStore] contextForCurrentThread];
     
     [self setupFetchedResultsController];
+    
+    self.searchResults = [NSMutableArray arrayWithCapacity:[[self.fetchedResultsController fetchedObjects] count]];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -69,7 +70,7 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+	self.searchResults = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -105,7 +106,7 @@
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:[self fetchRequest]
                                                                         managedObjectContext:self.managedObjectContext
                                                                           sectionNameKeyPath:nil
-                                                                                   cacheName:nil];
+                                                                                   cacheName:@"UserSearch"];
     self.fetchedResultsController.delegate = self;
     
     NSError *error = nil;
@@ -126,8 +127,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    id sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        return [self.searchResults count];
+    }
+	else
+	{
+        return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+    }
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -142,6 +151,15 @@
     User *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [self configureCell:cell forEntry:item];
     
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        item = [self.searchResults objectAtIndex:indexPath.row];
+    }
+	else
+	{
+        item = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    }
+
     return cell;
 }
 
@@ -201,5 +219,35 @@
     [self.tableView reloadData];
 }
 
+
+#pragma mark Content Filtering
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+	NSLog(@"Previous Search Results were removed.");
+	[self.searchResults removeAllObjects];
+    
+	NSPredicate *pre = [NSPredicate predicateWithFormat:@"username CONTAINS [cd] %@", searchText];
+    self.searchResults = [[self.fetchedResultsController fetchedObjects] filteredArrayUsingPredicate:pre];
+}
+
+
+
+#pragma mark - UISearchDisplayController Delegate Methods
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    // Tells the table data source to reload when text changes
+    [self filterContentForSearchText:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+    // Tells the table data source to reload when scope bar selection changes
+    [self filterContentForSearchText:self.searchDisplayController.searchBar.text scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
 
 @end
